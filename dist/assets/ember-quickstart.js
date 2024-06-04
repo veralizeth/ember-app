@@ -208,6 +208,12 @@
   }
   _exports.default = Router;
   Router.map(function () {});
+  Router.map(function () {
+    this.route('about');
+    this.route("contact", {
+      path: '/getting-in-touch'
+    });
+  });
 });
 ;define("ember-quickstart/services/page-title", ["exports", "ember-page-title/services/page-title"], function (_exports, _pageTitle) {
   "use strict";
@@ -245,6 +251,93 @@
       available: '5.2'
     }
   }));
+});
+;define("ember-quickstart/templates/about", ["exports", "@ember/template-factory"], function (_exports, _templateFactory) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  0; //eaimeta@70e063a35619d71f0,"@ember/template-factory"eaimeta@70e063a35619d71f
+  var _default = _exports.default = (0, _templateFactory.createTemplateFactory)(
+  /*
+    <div class="jumbo">
+      <div class="right tomster"> </div>
+          <h2>
+              About Super Rentals
+          </h2>
+          <p>    The Super Rentals website is a delightful project created to explore Ember.
+      By building a property rental site, we can simultaneously imagine traveling
+      AND building Ember applications.</p>
+  </div>
+  */
+  {
+    "id": "qGZ9dBpt",
+    "block": "[[[10,0],[14,0,\"jumbo\"],[12],[1,\"\\n    \"],[10,0],[14,0,\"right tomster\"],[12],[1,\" \"],[13],[1,\"\\n        \"],[10,\"h2\"],[12],[1,\"\\n            About Super Rentals\\n        \"],[13],[1,\"\\n        \"],[10,2],[12],[1,\"    The Super Rentals website is a delightful project created to explore Ember.\\n    By building a property rental site, we can simultaneously imagine traveling\\n    AND building Ember applications.\"],[13],[1,\"\\n\"],[13]],[],false,[\"div\",\"h2\",\"p\"]]",
+    "moduleName": "ember-quickstart/templates/about.hbs",
+    "isStrictMode": false
+  });
+});
+;define("ember-quickstart/templates/contact", ["exports", "@ember/template-factory"], function (_exports, _templateFactory) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  0; //eaimeta@70e063a35619d71f0,"@ember/template-factory"eaimeta@70e063a35619d71f
+  var _default = _exports.default = (0, _templateFactory.createTemplateFactory)(
+  /*
+    <div class="jumbo">
+      <div class="right tomster"></div>
+      <h2>Contact</h2>
+      <p>
+          Super Rentals Representatives would love to help you<br>
+      choose a destination or answer any questions you may have.
+      </p>
+      <address>
+          Super Rentals hq
+          <p>
+              1212 Test Address Avenue<br>
+              Testington, OR 97233
+          </p>
+          <a href="tel:503.555.1212">+1(503)555-1212</a><br/>
+          <a href="mailto:superrentalsrep@emberjs.com">superrentalsrep@emberjs.com</a>
+      </address>
+  
+  </div>
+  
+  */
+  {
+    "id": "YuzAZ/Vj",
+    "block": "[[[10,0],[14,0,\"jumbo\"],[12],[1,\"\\n    \"],[10,0],[14,0,\"right tomster\"],[12],[13],[1,\"\\n    \"],[10,\"h2\"],[12],[1,\"Contact\"],[13],[1,\"\\n    \"],[10,2],[12],[1,\"\\n        Super Rentals Representatives would love to help you\"],[10,\"br\"],[12],[13],[1,\"\\n    choose a destination or answer any questions you may have.\\n    \"],[13],[1,\"\\n    \"],[10,\"address\"],[12],[1,\"\\n        Super Rentals hq\\n        \"],[10,2],[12],[1,\"\\n            1212 Test Address Avenue\"],[10,\"br\"],[12],[13],[1,\"\\n            Testington, OR 97233\\n        \"],[13],[1,\"\\n        \"],[10,3],[14,6,\"tel:503.555.1212\"],[12],[1,\"+1(503)555-1212\"],[13],[10,\"br\"],[12],[13],[1,\"\\n        \"],[10,3],[14,6,\"mailto:superrentalsrep@emberjs.com\"],[12],[1,\"superrentalsrep@emberjs.com\"],[13],[1,\"\\n    \"],[13],[1,\"\\n\\n\"],[13],[1,\"\\n\"]],[],false,[\"div\",\"h2\",\"p\",\"br\",\"address\",\"a\"]]",
+    "moduleName": "ember-quickstart/templates/contact.hbs",
+    "isStrictMode": false
+  });
+});
+;define("ember-quickstart/templates/index", ["exports", "@ember/template-factory"], function (_exports, _templateFactory) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  0; //eaimeta@70e063a35619d71f0,"@ember/template-factory"eaimeta@70e063a35619d71f
+  var _default = _exports.default = (0, _templateFactory.createTemplateFactory)(
+  /*
+    <div class="jumbo">
+    <div class="right tomster"></div>
+    <h2>Welcome to Super Rentals!</h2>
+    <p>We hope you find exactly what you're looking for in a place to stay.</p>
+  </div>
+  */
+  {
+    "id": "SfZs0h2G",
+    "block": "[[[10,0],[14,0,\"jumbo\"],[12],[1,\"\\n  \"],[10,0],[14,0,\"right tomster\"],[12],[13],[1,\"\\n  \"],[10,\"h2\"],[12],[1,\"Welcome to Super Rentals!\"],[13],[1,\"\\n  \"],[10,2],[12],[1,\"We hope you find exactly what you're looking for in a place to stay.\"],[13],[1,\"\\n\"],[13]],[],false,[\"div\",\"h2\",\"p\"]]",
+    "moduleName": "ember-quickstart/templates/index.hbs",
+    "isStrictMode": false
+  });
 });
 ;define("ember-quickstart/transforms/boolean", ["exports", "@ember/debug", "@ember-data/serializer/-private"], function (_exports, _debug, _private) {
   "use strict";
