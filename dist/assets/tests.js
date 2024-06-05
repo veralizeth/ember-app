@@ -1,5 +1,27 @@
 'use strict';
 
+define("ember-quickstart/tests/acceptance/ember-app-test", ["qunit", "@ember/test-helpers", "ember-quickstart/tests/helpers"], function (_qunit, _testHelpers, _helpers) {
+  "use strict";
+
+  0; //eaimeta@70e063a35619d71f0,"qunit",0,"@ember/test-helpers",0,"ember-quickstart/tests/helpers"eaimeta@70e063a35619d71f
+  // This is a framework Qunit.
+  (0, _qunit.module)('Acceptance | ember app', function (hooks) {
+    (0, _helpers.setupApplicationTest)(hooks);
+
+    // This async because the page is going to take some time to reload.
+    (0, _qunit.test)('visiting /', async function (assert) {
+      // Almost always use await and visit as a pair.
+      await (0, _testHelpers.visit)('/');
+      assert.strictEqual((0, _testHelpers.currentURL)(), '/');
+      assert.dom('h2').hasText('Welcome to super Rentals!');
+
+      // Using here classes to asset the behaviour
+      assert.dom('.jumbo a.button').hasText('About Us');
+      await click('.jumbo a.buttonm');
+      assert.strictEqual((0, _testHelpers.currentURL)(), '/about');
+    });
+  });
+});
 define("ember-quickstart/tests/helpers/index", ["exports", "ember-qunit"], function (_exports, _emberQunit) {
   "use strict";
 

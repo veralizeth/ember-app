@@ -270,11 +270,12 @@
           <p>    The Super Rentals website is a delightful project created to explore Ember.
       By building a property rental site, we can simultaneously imagine traveling
       AND building Ember applications.</p>
+      <LinkTo @route="contact" class="button">Contact Us</LinkTo>
   </div>
   */
   {
-    "id": "qGZ9dBpt",
-    "block": "[[[10,0],[14,0,\"jumbo\"],[12],[1,\"\\n    \"],[10,0],[14,0,\"right tomster\"],[12],[1,\" \"],[13],[1,\"\\n        \"],[10,\"h2\"],[12],[1,\"\\n            About Super Rentals\\n        \"],[13],[1,\"\\n        \"],[10,2],[12],[1,\"    The Super Rentals website is a delightful project created to explore Ember.\\n    By building a property rental site, we can simultaneously imagine traveling\\n    AND building Ember applications.\"],[13],[1,\"\\n\"],[13]],[],false,[\"div\",\"h2\",\"p\"]]",
+    "id": "/p3u4af2",
+    "block": "[[[10,0],[14,0,\"jumbo\"],[12],[1,\"\\n    \"],[10,0],[14,0,\"right tomster\"],[12],[1,\" \"],[13],[1,\"\\n        \"],[10,\"h2\"],[12],[1,\"\\n            About Super Rentals\\n        \"],[13],[1,\"\\n        \"],[10,2],[12],[1,\"    The Super Rentals website is a delightful project created to explore Ember.\\n    By building a property rental site, we can simultaneously imagine traveling\\n    AND building Ember applications.\"],[13],[1,\"\\n    \"],[8,[39,3],[[24,0,\"button\"]],[[\"@route\"],[\"contact\"]],[[\"default\"],[[[[1,\"Contact Us\"]],[]]]]],[1,\"\\n\"],[13]],[],false,[\"div\",\"h2\",\"p\",\"link-to\"]]",
     "moduleName": "ember-quickstart/templates/about.hbs",
     "isStrictMode": false
   });
@@ -304,14 +305,15 @@
           </p>
           <a href="tel:503.555.1212">+1(503)555-1212</a><br/>
           <a href="mailto:superrentalsrep@emberjs.com">superrentalsrep@emberjs.com</a>
+          
       </address>
-  
+      <LinkTo @route="about" class="button">About</LinkTo>
   </div>
   
   */
   {
-    "id": "YuzAZ/Vj",
-    "block": "[[[10,0],[14,0,\"jumbo\"],[12],[1,\"\\n    \"],[10,0],[14,0,\"right tomster\"],[12],[13],[1,\"\\n    \"],[10,\"h2\"],[12],[1,\"Contact\"],[13],[1,\"\\n    \"],[10,2],[12],[1,\"\\n        Super Rentals Representatives would love to help you\"],[10,\"br\"],[12],[13],[1,\"\\n    choose a destination or answer any questions you may have.\\n    \"],[13],[1,\"\\n    \"],[10,\"address\"],[12],[1,\"\\n        Super Rentals hq\\n        \"],[10,2],[12],[1,\"\\n            1212 Test Address Avenue\"],[10,\"br\"],[12],[13],[1,\"\\n            Testington, OR 97233\\n        \"],[13],[1,\"\\n        \"],[10,3],[14,6,\"tel:503.555.1212\"],[12],[1,\"+1(503)555-1212\"],[13],[10,\"br\"],[12],[13],[1,\"\\n        \"],[10,3],[14,6,\"mailto:superrentalsrep@emberjs.com\"],[12],[1,\"superrentalsrep@emberjs.com\"],[13],[1,\"\\n    \"],[13],[1,\"\\n\\n\"],[13],[1,\"\\n\"]],[],false,[\"div\",\"h2\",\"p\",\"br\",\"address\",\"a\"]]",
+    "id": "m4WRSynV",
+    "block": "[[[10,0],[14,0,\"jumbo\"],[12],[1,\"\\n    \"],[10,0],[14,0,\"right tomster\"],[12],[13],[1,\"\\n    \"],[10,\"h2\"],[12],[1,\"Contact\"],[13],[1,\"\\n    \"],[10,2],[12],[1,\"\\n        Super Rentals Representatives would love to help you\"],[10,\"br\"],[12],[13],[1,\"\\n    choose a destination or answer any questions you may have.\\n    \"],[13],[1,\"\\n    \"],[10,\"address\"],[12],[1,\"\\n        Super Rentals hq\\n        \"],[10,2],[12],[1,\"\\n            1212 Test Address Avenue\"],[10,\"br\"],[12],[13],[1,\"\\n            Testington, OR 97233\\n        \"],[13],[1,\"\\n        \"],[10,3],[14,6,\"tel:503.555.1212\"],[12],[1,\"+1(503)555-1212\"],[13],[10,\"br\"],[12],[13],[1,\"\\n        \"],[10,3],[14,6,\"mailto:superrentalsrep@emberjs.com\"],[12],[1,\"superrentalsrep@emberjs.com\"],[13],[1,\"\\n        \\n    \"],[13],[1,\"\\n    \"],[8,[39,6],[[24,0,\"button\"]],[[\"@route\"],[\"about\"]],[[\"default\"],[[[[1,\"About\"]],[]]]]],[1,\"\\n\"],[13],[1,\"\\n\"]],[],false,[\"div\",\"h2\",\"p\",\"br\",\"address\",\"a\",\"link-to\"]]",
     "moduleName": "ember-quickstart/templates/contact.hbs",
     "isStrictMode": false
   });
@@ -330,11 +332,12 @@
     <div class="right tomster"></div>
     <h2>Welcome to Super Rentals!</h2>
     <p>We hope you find exactly what you're looking for in a place to stay.</p>
+    <LinkTo @route="about" class="button">About us</LinkTo>
   </div>
   */
   {
-    "id": "SfZs0h2G",
-    "block": "[[[10,0],[14,0,\"jumbo\"],[12],[1,\"\\n  \"],[10,0],[14,0,\"right tomster\"],[12],[13],[1,\"\\n  \"],[10,\"h2\"],[12],[1,\"Welcome to Super Rentals!\"],[13],[1,\"\\n  \"],[10,2],[12],[1,\"We hope you find exactly what you're looking for in a place to stay.\"],[13],[1,\"\\n\"],[13]],[],false,[\"div\",\"h2\",\"p\"]]",
+    "id": "aUJM507/",
+    "block": "[[[10,0],[14,0,\"jumbo\"],[12],[1,\"\\n  \"],[10,0],[14,0,\"right tomster\"],[12],[13],[1,\"\\n  \"],[10,\"h2\"],[12],[1,\"Welcome to Super Rentals!\"],[13],[1,\"\\n  \"],[10,2],[12],[1,\"We hope you find exactly what you're looking for in a place to stay.\"],[13],[1,\"\\n  \"],[8,[39,3],[[24,0,\"button\"]],[[\"@route\"],[\"about\"]],[[\"default\"],[[[[1,\"About us\"]],[]]]]],[1,\"\\n\"],[13]],[],false,[\"div\",\"h2\",\"p\",\"link-to\"]]",
     "moduleName": "ember-quickstart/templates/index.hbs",
     "isStrictMode": false
   });
@@ -454,7 +457,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0"});
+            require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+9708b39b"});
           }
         
 //# sourceMappingURL=ember-quickstart.map
