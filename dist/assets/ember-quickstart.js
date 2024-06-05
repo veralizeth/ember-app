@@ -38,6 +38,29 @@
   });
   0; //eaimeta@70e063a35619d71f0,"@glimmer/component/-private/ember-component-manager"eaimeta@70e063a35619d71f
 });
+;define("ember-quickstart/components/jumbo", ["exports", "@ember/component", "@ember/component/template-only", "@ember/template-factory"], function (_exports, _component, _templateOnly, _templateFactory) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  0; //eaimeta@70e063a35619d71f0,"@ember/component/template-only",0,"@ember/template-factory",0,"@ember/component"eaimeta@70e063a35619d71f
+  const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
+  /*
+    <div class="jumbo">
+      <div class="right tomster"></div>
+      {{yield}}
+  </div>
+  */
+  {
+    "id": "095881Wn",
+    "block": "[[[10,0],[14,0,\"jumbo\"],[12],[1,\"\\n    \"],[10,0],[14,0,\"right tomster\"],[12],[13],[1,\"\\n    \"],[18,1,null],[1,\"\\n\"],[13]],[\"&default\"],false,[\"div\",\"yield\"]]",
+    "moduleName": "ember-quickstart/components/jumbo.hbs",
+    "isStrictMode": false
+  });
+  var _default = _exports.default = (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, (0, _templateOnly.default)());
+});
 ;define("ember-quickstart/components/welcome-page", ["exports", "ember-welcome-page/components/welcome-page"], function (_exports, _welcomePage) {
   "use strict";
 
@@ -262,8 +285,7 @@
   0; //eaimeta@70e063a35619d71f0,"@ember/template-factory"eaimeta@70e063a35619d71f
   var _default = _exports.default = (0, _templateFactory.createTemplateFactory)(
   /*
-    <div class="jumbo">
-      <div class="right tomster"> </div>
+    <Jumbo>
           <h2>
               About Super Rentals!
           </h2>
@@ -271,11 +293,11 @@
       By building a property rental site, we can simultaneously imagine traveling
       AND building Ember applications.</p>
       <LinkTo @route="contact" class="button">Contact Us</LinkTo>
-  </div>
+  </Jumbo>
   */
   {
-    "id": "CPNSbzng",
-    "block": "[[[10,0],[14,0,\"jumbo\"],[12],[1,\"\\n    \"],[10,0],[14,0,\"right tomster\"],[12],[1,\" \"],[13],[1,\"\\n        \"],[10,\"h2\"],[12],[1,\"\\n            About Super Rentals!\\n        \"],[13],[1,\"\\n        \"],[10,2],[12],[1,\"    The Super Rentals website is a delightful project created to explore Ember.\\n    By building a property rental site, we can simultaneously imagine traveling\\n    AND building Ember applications.\"],[13],[1,\"\\n    \"],[8,[39,3],[[24,0,\"button\"]],[[\"@route\"],[\"contact\"]],[[\"default\"],[[[[1,\"Contact Us\"]],[]]]]],[1,\"\\n\"],[13]],[],false,[\"div\",\"h2\",\"p\",\"link-to\"]]",
+    "id": "O3CaDBED",
+    "block": "[[[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n        \"],[10,\"h2\"],[12],[1,\"\\n            About Super Rentals!\\n        \"],[13],[1,\"\\n        \"],[10,2],[12],[1,\"    The Super Rentals website is a delightful project created to explore Ember.\\n    By building a property rental site, we can simultaneously imagine traveling\\n    AND building Ember applications.\"],[13],[1,\"\\n    \"],[8,[39,3],[[24,0,\"button\"]],[[\"@route\"],[\"contact\"]],[[\"default\"],[[[[1,\"Contact Us\"]],[]]]]],[1,\"\\n\"]],[]]]]]],[],false,[\"jumbo\",\"h2\",\"p\",\"link-to\"]]",
     "moduleName": "ember-quickstart/templates/about.hbs",
     "isStrictMode": false
   });
@@ -290,8 +312,7 @@
   0; //eaimeta@70e063a35619d71f0,"@ember/template-factory"eaimeta@70e063a35619d71f
   var _default = _exports.default = (0, _templateFactory.createTemplateFactory)(
   /*
-    <div class="jumbo">
-      <div class="right tomster"></div>
+    <Jumbo>
       <h2>Contact</h2>
       <p>
           Super Rentals Representatives would love to help you<br>
@@ -308,12 +329,11 @@
           
       </address>
       <LinkTo @route="about" class="button">About Us</LinkTo>
-  </div>
-  
+  </Jumbo>
   */
   {
-    "id": "6V4fl9yn",
-    "block": "[[[10,0],[14,0,\"jumbo\"],[12],[1,\"\\n    \"],[10,0],[14,0,\"right tomster\"],[12],[13],[1,\"\\n    \"],[10,\"h2\"],[12],[1,\"Contact\"],[13],[1,\"\\n    \"],[10,2],[12],[1,\"\\n        Super Rentals Representatives would love to help you\"],[10,\"br\"],[12],[13],[1,\"\\n    choose a destination or answer any questions you may have.\\n    \"],[13],[1,\"\\n    \"],[10,\"address\"],[12],[1,\"\\n        Super Rentals hq\\n        \"],[10,2],[12],[1,\"\\n            1212 Test Address Avenue\"],[10,\"br\"],[12],[13],[1,\"\\n            Testington, OR 97233\\n        \"],[13],[1,\"\\n        \"],[10,3],[14,6,\"tel:503.555.1212\"],[12],[1,\"+1(503)555-1212\"],[13],[10,\"br\"],[12],[13],[1,\"\\n        \"],[10,3],[14,6,\"mailto:superrentalsrep@emberjs.com\"],[12],[1,\"superrentalsrep@emberjs.com\"],[13],[1,\"\\n        \\n    \"],[13],[1,\"\\n    \"],[8,[39,6],[[24,0,\"button\"]],[[\"@route\"],[\"about\"]],[[\"default\"],[[[[1,\"About Us\"]],[]]]]],[1,\"\\n\"],[13],[1,\"\\n\"]],[],false,[\"div\",\"h2\",\"p\",\"br\",\"address\",\"a\",\"link-to\"]]",
+    "id": "WN92r3FE",
+    "block": "[[[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n    \"],[10,\"h2\"],[12],[1,\"Contact\"],[13],[1,\"\\n    \"],[10,2],[12],[1,\"\\n        Super Rentals Representatives would love to help you\"],[10,\"br\"],[12],[13],[1,\"\\n    choose a destination or answer any questions you may have.\\n    \"],[13],[1,\"\\n    \"],[10,\"address\"],[12],[1,\"\\n        Super Rentals hq\\n        \"],[10,2],[12],[1,\"\\n            1212 Test Address Avenue\"],[10,\"br\"],[12],[13],[1,\"\\n            Testington, OR 97233\\n        \"],[13],[1,\"\\n        \"],[10,3],[14,6,\"tel:503.555.1212\"],[12],[1,\"+1(503)555-1212\"],[13],[10,\"br\"],[12],[13],[1,\"\\n        \"],[10,3],[14,6,\"mailto:superrentalsrep@emberjs.com\"],[12],[1,\"superrentalsrep@emberjs.com\"],[13],[1,\"\\n        \\n    \"],[13],[1,\"\\n    \"],[8,[39,6],[[24,0,\"button\"]],[[\"@route\"],[\"about\"]],[[\"default\"],[[[[1,\"About Us\"]],[]]]]],[1,\"\\n\"]],[]]]]]],[],false,[\"jumbo\",\"h2\",\"p\",\"br\",\"address\",\"a\",\"link-to\"]]",
     "moduleName": "ember-quickstart/templates/contact.hbs",
     "isStrictMode": false
   });
@@ -328,16 +348,15 @@
   0; //eaimeta@70e063a35619d71f0,"@ember/template-factory"eaimeta@70e063a35619d71f
   var _default = _exports.default = (0, _templateFactory.createTemplateFactory)(
   /*
-    <div class="jumbo">
-    <div class="right tomster"></div>
+    <Jumbo>
     <h2>Welcome to Super Rentals!</h2>
     <p>We hope you find exactly what you're looking for in a place to stay.</p>
     <LinkTo @route="about" class="button">About Us</LinkTo>
-  </div>
+  </Jumbo>
   */
   {
-    "id": "+fY4ZI4c",
-    "block": "[[[10,0],[14,0,\"jumbo\"],[12],[1,\"\\n  \"],[10,0],[14,0,\"right tomster\"],[12],[13],[1,\"\\n  \"],[10,\"h2\"],[12],[1,\"Welcome to Super Rentals!\"],[13],[1,\"\\n  \"],[10,2],[12],[1,\"We hope you find exactly what you're looking for in a place to stay.\"],[13],[1,\"\\n  \"],[8,[39,3],[[24,0,\"button\"]],[[\"@route\"],[\"about\"]],[[\"default\"],[[[[1,\"About Us\"]],[]]]]],[1,\"\\n\"],[13]],[],false,[\"div\",\"h2\",\"p\",\"link-to\"]]",
+    "id": "Gx7VEGmV",
+    "block": "[[[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n  \"],[10,\"h2\"],[12],[1,\"Welcome to Super Rentals!\"],[13],[1,\"\\n  \"],[10,2],[12],[1,\"We hope you find exactly what you're looking for in a place to stay.\"],[13],[1,\"\\n  \"],[8,[39,3],[[24,0,\"button\"]],[[\"@route\"],[\"about\"]],[[\"default\"],[[[[1,\"About Us\"]],[]]]]],[1,\"\\n\"]],[]]]]]],[],false,[\"jumbo\",\"h2\",\"p\",\"link-to\"]]",
     "moduleName": "ember-quickstart/templates/index.hbs",
     "isStrictMode": false
   });

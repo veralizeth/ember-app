@@ -80,6 +80,32 @@ define("ember-quickstart/tests/helpers/index", ["exports", "ember-qunit"], funct
     // Additional setup for unit tests can be done here.
   }
 });
+define("ember-quickstart/tests/integration/components/jumbo-test", ["qunit", "ember-quickstart/tests/helpers", "@ember/test-helpers", "@ember/template-factory"], function (_qunit, _helpers, _testHelpers, _templateFactory) {
+  "use strict";
+
+  0; //eaimeta@70e063a35619d71f0,"qunit",0,"ember-quickstart/tests/helpers",0,"@ember/test-helpers",0,"@ember/template-factory"eaimeta@70e063a35619d71f
+  // Testing componet isolation.
+  (0, _qunit.module)('Integration | Component | jumbo', function (hooks) {
+    (0, _helpers.setupRenderingTest)(hooks);
+    (0, _qunit.test)('it renders the content inside a jumbo header with tomster', async function (assert) {
+      // Set any properties with this.set('myProperty', 'value');
+      // Handle any actions with this.set('myAction', function(val) { ... });
+      await (0, _testHelpers.render)((0, _templateFactory.createTemplateFactory)(
+      /*
+        <Jumbo>Hello World</Jumbo>
+      */
+      {
+        "id": "CVdnNizx",
+        "block": "[[[8,[39,0],null,null,[[\"default\"],[[[[1,\"Hello World\"]],[]]]]]],[],false,[\"jumbo\"]]",
+        "moduleName": "/Users/lizethvera/Code/ember-app/ember-quickstart/tests/integration/components/jumbo-test.js",
+        "isStrictMode": false
+      }));
+      assert.dom('.jumbo').exist();
+      assert.dom('.jumbo').hasText('Hello World');
+      assert.dom('.jumbo .tomster').exists();
+    });
+  });
+});
 define("ember-quickstart/tests/test-helper", ["ember-quickstart/app", "ember-quickstart/config/environment", "qunit", "@ember/test-helpers", "qunit-dom", "ember-qunit"], function (_app, _environment, QUnit, _testHelpers, _qunitDom, _emberQunit) {
   "use strict";
 
