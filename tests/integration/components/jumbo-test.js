@@ -13,7 +13,7 @@ module('Integration | Component | jumbo', function (hooks) {
     // Handle any actions with this.set('myAction', function(val) { ... });
     await render(hbs`<Jumbo>Hello World</Jumbo>`);
 
-    assert.dom('.jumbo').exist();
+    assert.dom('.jumbo').exists();
     assert.dom('.jumbo').hasText('Hello World');
     assert.dom('.jumbo .tomster').exists();
   });

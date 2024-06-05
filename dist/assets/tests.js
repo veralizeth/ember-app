@@ -100,7 +100,7 @@ define("ember-quickstart/tests/integration/components/jumbo-test", ["qunit", "em
         "moduleName": "/Users/lizethvera/Code/ember-app/ember-quickstart/tests/integration/components/jumbo-test.js",
         "isStrictMode": false
       }));
-      assert.dom('.jumbo').exist();
+      assert.dom('.jumbo').exists();
       assert.dom('.jumbo').hasText('Hello World');
       assert.dom('.jumbo .tomster').exists();
     });
