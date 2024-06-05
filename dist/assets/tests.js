@@ -13,11 +13,26 @@ define("ember-quickstart/tests/acceptance/ember-app-test", ["qunit", "@ember/tes
       // Almost always use await and visit as a pair.
       await (0, _testHelpers.visit)('/');
       assert.strictEqual((0, _testHelpers.currentURL)(), '/');
-      assert.dom('h2').hasText('Welcome to super Rentals!');
+      assert.dom('h2').hasText('Welcome to Super Rentals!');
 
       // Using here classes to asset the behaviour
       assert.dom('.jumbo a.button').hasText('About Us');
-      await click('.jumbo a.buttonm');
+      await (0, _testHelpers.click)('.jumbo a.button');
+      assert.strictEqual((0, _testHelpers.currentURL)(), '/about');
+    });
+    (0, _qunit.test)('visiting /about', async function (assert) {
+      await (0, _testHelpers.visit)('/about');
+      assert.strictEqual((0, _testHelpers.currentURL)(), '/about');
+      assert.dom('h2').hasText('About Super Rentals!');
+      assert.dom('.jumbo a.button').hasText('Contact Us');
+      await (0, _testHelpers.click)('.jumbo a.button');
+      assert.strictEqual((0, _testHelpers.currentURL)(), '/getting-in-touch');
+    });
+    (0, _qunit.test)('visiting /getting-in-touch', async function (assert) {
+      await (0, _testHelpers.visit)('/getting-in-touch');
+      assert.strictEqual((0, _testHelpers.currentURL)(), '/getting-in-touch');
+      assert.dom('.jumbo a.button').hasText('About Us');
+      await (0, _testHelpers.click)('.jumbo a.button');
       assert.strictEqual((0, _testHelpers.currentURL)(), '/about');
     });
   });
