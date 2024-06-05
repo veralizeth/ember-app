@@ -13,6 +13,8 @@ define("ember-quickstart/tests/acceptance/ember-app-test", ["qunit", "@ember/tes
       // Almost always use await and visit as a pair.
       await (0, _testHelpers.visit)('/');
       assert.strictEqual((0, _testHelpers.currentURL)(), '/');
+      assert.dom('nav').exists();
+      assert.dom('h1').hasText('SuperRentals');
       assert.dom('h2').hasText('Welcome to Super Rentals!');
 
       // Using here classes to asset the behaviour
@@ -23,6 +25,8 @@ define("ember-quickstart/tests/acceptance/ember-app-test", ["qunit", "@ember/tes
     (0, _qunit.test)('visiting /about', async function (assert) {
       await (0, _testHelpers.visit)('/about');
       assert.strictEqual((0, _testHelpers.currentURL)(), '/about');
+      assert.dom('nav').exists();
+      assert.dom('h1').hasText('SuperRentals');
       assert.dom('h2').hasText('About Super Rentals!');
       assert.dom('.jumbo a.button').hasText('Contact Us');
       await (0, _testHelpers.click)('.jumbo a.button');
@@ -31,9 +35,24 @@ define("ember-quickstart/tests/acceptance/ember-app-test", ["qunit", "@ember/tes
     (0, _qunit.test)('visiting /getting-in-touch', async function (assert) {
       await (0, _testHelpers.visit)('/getting-in-touch');
       assert.strictEqual((0, _testHelpers.currentURL)(), '/getting-in-touch');
+      assert.dom('nav').exists();
+      assert.dom('h1').hasText('SuperRentals');
       assert.dom('.jumbo a.button').hasText('About Us');
       await (0, _testHelpers.click)('.jumbo a.button');
       assert.strictEqual((0, _testHelpers.currentURL)(), '/about');
+    });
+    (0, _qunit.test)('navigating using the nav-bar', async function (assert) {
+      await (0, _testHelpers.visit)('/');
+      assert.dom('nav').exists();
+      assert.dom('nav a.menu-index').hasText('SuperRentals');
+      assert.dom('nav a.menu-about').hasText('About');
+      assert.dom('nav a.menu-contact').hasText('Contact');
+      await (0, _testHelpers.click)('nav a.menu-about');
+      assert.strictEqual((0, _testHelpers.currentURL)(), '/about');
+      await (0, _testHelpers.click)('nav a.menu-contact');
+      assert.strictEqual((0, _testHelpers.currentURL)(), '/getting-in-touch');
+      await (0, _testHelpers.click)('nav a.menu-index');
+      assert.strictEqual((0, _testHelpers.currentURL)(), '/');
     });
   });
 });

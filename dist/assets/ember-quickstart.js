@@ -61,6 +61,38 @@
   });
   var _default = _exports.default = (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, (0, _templateOnly.default)());
 });
+;define("ember-quickstart/components/nav-bar", ["exports", "@ember/component", "@ember/component/template-only", "@ember/template-factory"], function (_exports, _component, _templateOnly, _templateFactory) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  0; //eaimeta@70e063a35619d71f0,"@ember/component/template-only",0,"@ember/template-factory",0,"@ember/component"eaimeta@70e063a35619d71f
+  const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
+  /*
+    <nav class="menu">
+      <LinkTo @route="index" class="menu-index">
+          <h1>SuperRentals</h1>
+      </LinkTo>
+      <div class="links">
+          <LinkTo @route="about" class="menu-about">
+          About
+          </LinkTo>
+          <LinkTo @route="contact" class="menu-contact">
+          Contact
+          </LinkTo>
+      </div>
+  </nav>
+  */
+  {
+    "id": "UWHN2ufw",
+    "block": "[[[10,\"nav\"],[14,0,\"menu\"],[12],[1,\"\\n    \"],[8,[39,1],[[24,0,\"menu-index\"]],[[\"@route\"],[\"index\"]],[[\"default\"],[[[[1,\"\\n        \"],[10,\"h1\"],[12],[1,\"SuperRentals\"],[13],[1,\"\\n    \"]],[]]]]],[1,\"\\n    \"],[10,0],[14,0,\"links\"],[12],[1,\"\\n        \"],[8,[39,1],[[24,0,\"menu-about\"]],[[\"@route\"],[\"about\"]],[[\"default\"],[[[[1,\"\\n        About\\n        \"]],[]]]]],[1,\"\\n        \"],[8,[39,1],[[24,0,\"menu-contact\"]],[[\"@route\"],[\"contact\"]],[[\"default\"],[[[[1,\"\\n        Contact\\n        \"]],[]]]]],[1,\"\\n    \"],[13],[1,\"\\n\"],[13]],[],false,[\"nav\",\"link-to\",\"h1\",\"div\"]]",
+    "moduleName": "ember-quickstart/components/nav-bar.hbs",
+    "isStrictMode": false
+  });
+  var _default = _exports.default = (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, (0, _templateOnly.default)());
+});
 ;define("ember-quickstart/components/welcome-page", ["exports", "ember-welcome-page/components/welcome-page"], function (_exports, _welcomePage) {
   "use strict";
 
@@ -285,7 +317,8 @@
   0; //eaimeta@70e063a35619d71f0,"@ember/template-factory"eaimeta@70e063a35619d71f
   var _default = _exports.default = (0, _templateFactory.createTemplateFactory)(
   /*
-    <Jumbo>
+    <NavBar/>
+  <Jumbo>
           <h2>
               About Super Rentals!
           </h2>
@@ -296,8 +329,8 @@
   </Jumbo>
   */
   {
-    "id": "O3CaDBED",
-    "block": "[[[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n        \"],[10,\"h2\"],[12],[1,\"\\n            About Super Rentals!\\n        \"],[13],[1,\"\\n        \"],[10,2],[12],[1,\"    The Super Rentals website is a delightful project created to explore Ember.\\n    By building a property rental site, we can simultaneously imagine traveling\\n    AND building Ember applications.\"],[13],[1,\"\\n    \"],[8,[39,3],[[24,0,\"button\"]],[[\"@route\"],[\"contact\"]],[[\"default\"],[[[[1,\"Contact Us\"]],[]]]]],[1,\"\\n\"]],[]]]]]],[],false,[\"jumbo\",\"h2\",\"p\",\"link-to\"]]",
+    "id": "ypLJ1gwS",
+    "block": "[[[8,[39,0],null,null,null],[1,\"\\n\"],[8,[39,1],null,null,[[\"default\"],[[[[1,\"\\n        \"],[10,\"h2\"],[12],[1,\"\\n            About Super Rentals!\\n        \"],[13],[1,\"\\n        \"],[10,2],[12],[1,\"    The Super Rentals website is a delightful project created to explore Ember.\\n    By building a property rental site, we can simultaneously imagine traveling\\n    AND building Ember applications.\"],[13],[1,\"\\n    \"],[8,[39,4],[[24,0,\"button\"]],[[\"@route\"],[\"contact\"]],[[\"default\"],[[[[1,\"Contact Us\"]],[]]]]],[1,\"\\n\"]],[]]]]]],[],false,[\"nav-bar\",\"jumbo\",\"h2\",\"p\",\"link-to\"]]",
     "moduleName": "ember-quickstart/templates/about.hbs",
     "isStrictMode": false
   });
@@ -312,7 +345,8 @@
   0; //eaimeta@70e063a35619d71f0,"@ember/template-factory"eaimeta@70e063a35619d71f
   var _default = _exports.default = (0, _templateFactory.createTemplateFactory)(
   /*
-    <Jumbo>
+    <NavBar/>
+  <Jumbo>
       <h2>Contact</h2>
       <p>
           Super Rentals Representatives would love to help you<br>
@@ -332,8 +366,8 @@
   </Jumbo>
   */
   {
-    "id": "WN92r3FE",
-    "block": "[[[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n    \"],[10,\"h2\"],[12],[1,\"Contact\"],[13],[1,\"\\n    \"],[10,2],[12],[1,\"\\n        Super Rentals Representatives would love to help you\"],[10,\"br\"],[12],[13],[1,\"\\n    choose a destination or answer any questions you may have.\\n    \"],[13],[1,\"\\n    \"],[10,\"address\"],[12],[1,\"\\n        Super Rentals hq\\n        \"],[10,2],[12],[1,\"\\n            1212 Test Address Avenue\"],[10,\"br\"],[12],[13],[1,\"\\n            Testington, OR 97233\\n        \"],[13],[1,\"\\n        \"],[10,3],[14,6,\"tel:503.555.1212\"],[12],[1,\"+1(503)555-1212\"],[13],[10,\"br\"],[12],[13],[1,\"\\n        \"],[10,3],[14,6,\"mailto:superrentalsrep@emberjs.com\"],[12],[1,\"superrentalsrep@emberjs.com\"],[13],[1,\"\\n        \\n    \"],[13],[1,\"\\n    \"],[8,[39,6],[[24,0,\"button\"]],[[\"@route\"],[\"about\"]],[[\"default\"],[[[[1,\"About Us\"]],[]]]]],[1,\"\\n\"]],[]]]]]],[],false,[\"jumbo\",\"h2\",\"p\",\"br\",\"address\",\"a\",\"link-to\"]]",
+    "id": "gUhLMLzi",
+    "block": "[[[8,[39,0],null,null,null],[1,\"\\n\"],[8,[39,1],null,null,[[\"default\"],[[[[1,\"\\n    \"],[10,\"h2\"],[12],[1,\"Contact\"],[13],[1,\"\\n    \"],[10,2],[12],[1,\"\\n        Super Rentals Representatives would love to help you\"],[10,\"br\"],[12],[13],[1,\"\\n    choose a destination or answer any questions you may have.\\n    \"],[13],[1,\"\\n    \"],[10,\"address\"],[12],[1,\"\\n        Super Rentals hq\\n        \"],[10,2],[12],[1,\"\\n            1212 Test Address Avenue\"],[10,\"br\"],[12],[13],[1,\"\\n            Testington, OR 97233\\n        \"],[13],[1,\"\\n        \"],[10,3],[14,6,\"tel:503.555.1212\"],[12],[1,\"+1(503)555-1212\"],[13],[10,\"br\"],[12],[13],[1,\"\\n        \"],[10,3],[14,6,\"mailto:superrentalsrep@emberjs.com\"],[12],[1,\"superrentalsrep@emberjs.com\"],[13],[1,\"\\n        \\n    \"],[13],[1,\"\\n    \"],[8,[39,7],[[24,0,\"button\"]],[[\"@route\"],[\"about\"]],[[\"default\"],[[[[1,\"About Us\"]],[]]]]],[1,\"\\n\"]],[]]]]]],[],false,[\"nav-bar\",\"jumbo\",\"h2\",\"p\",\"br\",\"address\",\"a\",\"link-to\"]]",
     "moduleName": "ember-quickstart/templates/contact.hbs",
     "isStrictMode": false
   });
@@ -348,15 +382,16 @@
   0; //eaimeta@70e063a35619d71f0,"@ember/template-factory"eaimeta@70e063a35619d71f
   var _default = _exports.default = (0, _templateFactory.createTemplateFactory)(
   /*
-    <Jumbo>
+    <NavBar/>
+  <Jumbo>
     <h2>Welcome to Super Rentals!</h2>
     <p>We hope you find exactly what you're looking for in a place to stay.</p>
     <LinkTo @route="about" class="button">About Us</LinkTo>
   </Jumbo>
   */
   {
-    "id": "Gx7VEGmV",
-    "block": "[[[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n  \"],[10,\"h2\"],[12],[1,\"Welcome to Super Rentals!\"],[13],[1,\"\\n  \"],[10,2],[12],[1,\"We hope you find exactly what you're looking for in a place to stay.\"],[13],[1,\"\\n  \"],[8,[39,3],[[24,0,\"button\"]],[[\"@route\"],[\"about\"]],[[\"default\"],[[[[1,\"About Us\"]],[]]]]],[1,\"\\n\"]],[]]]]]],[],false,[\"jumbo\",\"h2\",\"p\",\"link-to\"]]",
+    "id": "19woOd5i",
+    "block": "[[[8,[39,0],null,null,null],[1,\"\\n\"],[8,[39,1],null,null,[[\"default\"],[[[[1,\"\\n  \"],[10,\"h2\"],[12],[1,\"Welcome to Super Rentals!\"],[13],[1,\"\\n  \"],[10,2],[12],[1,\"We hope you find exactly what you're looking for in a place to stay.\"],[13],[1,\"\\n  \"],[8,[39,4],[[24,0,\"button\"]],[[\"@route\"],[\"about\"]],[[\"default\"],[[[[1,\"About Us\"]],[]]]]],[1,\"\\n\"]],[]]]]]],[],false,[\"nav-bar\",\"jumbo\",\"h2\",\"p\",\"link-to\"]]",
     "moduleName": "ember-quickstart/templates/index.hbs",
     "isStrictMode": false
   });
