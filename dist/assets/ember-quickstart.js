@@ -48,18 +48,53 @@
   0; //eaimeta@70e063a35619d71f0,"@ember/component/template-only",0,"@ember/template-factory",0,"@ember/component"eaimeta@70e063a35619d71f
   const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
   /*
-    <div class="jumbo">
-      <div class="right tomster"></div>
-      {{yield}}
+    <div class='jumbo'>
+    <div class='right tomster'></div>
+    {{yield}}
   </div>
   */
   {
-    "id": "095881Wn",
-    "block": "[[[10,0],[14,0,\"jumbo\"],[12],[1,\"\\n    \"],[10,0],[14,0,\"right tomster\"],[12],[13],[1,\"\\n    \"],[18,1,null],[1,\"\\n\"],[13]],[\"&default\"],false,[\"div\",\"yield\"]]",
+    "id": "+IDKmT0F",
+    "block": "[[[10,0],[14,0,\"jumbo\"],[12],[1,\"\\n  \"],[10,0],[14,0,\"right tomster\"],[12],[13],[1,\"\\n  \"],[18,1,null],[1,\"\\n\"],[13]],[\"&default\"],false,[\"div\",\"yield\"]]",
     "moduleName": "ember-quickstart/components/jumbo.hbs",
     "isStrictMode": false
   });
   var _default = _exports.default = (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, (0, _templateOnly.default)());
+});
+;define("ember-quickstart/components/map", ["exports", "@ember/component", "@glimmer/component", "ember-quickstart/config/environment", "@ember/template-factory"], function (_exports, _component, _component2, _environment, _templateFactory) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  0; //eaimeta@70e063a35619d71f0,"@glimmer/component",0,"ember-quickstart/config/environment",0,"@ember/template-factory",0,"@ember/component"eaimeta@70e063a35619d71f
+  const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
+  /*
+    {{yield}}
+  <div class='map'>
+    <img
+      alt='Map image at coordinates {{@lat}},{{@lng}}'
+      ...attributes
+      src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/{{@lng}},{{@lat}},{{@zoom}}/{{@width}}x{{@height}}@2x?access_token={{this.token}}'
+      width={{@width}}
+      height={{@height}}
+    />
+  </div>
+  */
+  {
+    "id": "wRUEiMPu",
+    "block": "[[[18,7,null],[1,\"\\n\"],[10,0],[14,0,\"map\"],[12],[1,\"\\n  \"],[11,\"img\"],[16,\"alt\",[29,[\"Map image at coordinates \",[30,1],\",\",[30,2]]]],[17,3],[16,\"src\",[29,[\"https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/\",[30,2],\",\",[30,1],\",\",[30,4],\"/\",[30,5],\"x\",[30,6],\"@2x?access_token=\",[30,0,[\"token\"]]]]],[16,\"width\",[30,5]],[16,\"height\",[30,6]],[12],[13],[1,\"\\n\"],[13]],[\"@lat\",\"@lng\",\"&attrs\",\"@zoom\",\"@width\",\"@height\",\"&default\"],false,[\"yield\",\"div\",\"img\"]]",
+    "moduleName": "ember-quickstart/components/map.hbs",
+    "isStrictMode": false
+  });
+  class MapComponent extends _component2.default {
+    get token() {
+      return encodeURIComponent(_environment.default.MAPBOX_ACCESS_TOKEN);
+    }
+  }
+  _exports.default = MapComponent;
+  (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, MapComponent);
 });
 ;define("ember-quickstart/components/nav-bar", ["exports", "@ember/component", "@ember/component/template-only", "@ember/template-factory"], function (_exports, _component, _templateOnly, _templateFactory) {
   "use strict";
@@ -104,31 +139,44 @@
   const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
   /*
     {{yield}}
-  <article class="rental">
-      <Rental::Image
-          src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg"
-          alt="A picture of Grand Old Mansion"
-      />
-      <div class="details">
-          <h3>Grand Old Mansion</h3>
-          <div class="detail owner">
-              <span>Owner:</span> Veruca Salt
-          </div>
-          <div class="detail type">
-              <span>Type:</span> Standalone
-          </div>
-          <div class="detail location">
-              <span>Location:</span> San Fransisco
-          </div>
-          <div class="detail bedrooms">
-              <span>Number of bedrooms:</span> 15
-          </div>
+  <article class='rental'>
+    <Rental::Image
+      src='https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg'
+      alt='A picture of Grand Old Mansion'
+    />
+    <div class='details'>
+      <h3>Grand Old Mansion</h3>
+      <div class='detail owner'>
+        <span>Owner:</span>
+        Veruca Salt
       </div>
+      <div class='detail type'>
+        <span>Type:</span>
+        Standalone
+      </div>
+      <div class='detail location'>
+        <span>Location:</span>
+        San Fransisco
+      </div>
+      <div class='detail bedrooms'>
+        <span>Number of bedrooms:</span>
+        15
+      </div>
+    </div>
+    <Map
+      @lat='37.7749'
+      @lng='-122.4194'
+      @zoom='9'
+      @width='150'
+      @height='150'
+      alt='A
+      map of Grand Old Mansion'
+    />
   </article>
   */
   {
-    "id": "P48dQB5P",
-    "block": "[[[18,1,null],[1,\"\\n\"],[10,\"article\"],[14,0,\"rental\"],[12],[1,\"\\n    \"],[8,[39,2],[[24,\"src\",\"https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg\"],[24,\"alt\",\"A picture of Grand Old Mansion\"]],null,null],[1,\"\\n    \"],[10,0],[14,0,\"details\"],[12],[1,\"\\n        \"],[10,\"h3\"],[12],[1,\"Grand Old Mansion\"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail owner\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Owner:\"],[13],[1,\" Veruca Salt\\n        \"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail type\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Type:\"],[13],[1,\" Standalone\\n        \"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail location\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Location:\"],[13],[1,\" San Fransisco\\n        \"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail bedrooms\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Number of bedrooms:\"],[13],[1,\" 15\\n        \"],[13],[1,\"\\n    \"],[13],[1,\"\\n\"],[13]],[\"&default\"],false,[\"yield\",\"article\",\"rental/image\",\"div\",\"h3\",\"span\"]]",
+    "id": "pCZKjDpb",
+    "block": "[[[18,1,null],[1,\"\\n\"],[10,\"article\"],[14,0,\"rental\"],[12],[1,\"\\n  \"],[8,[39,2],[[24,\"src\",\"https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg\"],[24,\"alt\",\"A picture of Grand Old Mansion\"]],null,null],[1,\"\\n  \"],[10,0],[14,0,\"details\"],[12],[1,\"\\n    \"],[10,\"h3\"],[12],[1,\"Grand Old Mansion\"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail owner\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Owner:\"],[13],[1,\"\\n      Veruca Salt\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail type\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Type:\"],[13],[1,\"\\n      Standalone\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail location\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Location:\"],[13],[1,\"\\n      San Fransisco\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail bedrooms\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Number of bedrooms:\"],[13],[1,\"\\n      15\\n    \"],[13],[1,\"\\n  \"],[13],[1,\"\\n  \"],[8,[39,6],[[24,\"alt\",\"A\\n    map of Grand Old Mansion\"]],[[\"@lat\",\"@lng\",\"@zoom\",\"@width\",\"@height\"],[\"37.7749\",\"-122.4194\",\"9\",\"150\",\"150\"]],null],[1,\"\\n\"],[13]],[\"&default\"],false,[\"yield\",\"article\",\"rental/image\",\"div\",\"h3\",\"span\",\"map\"]]",
     "moduleName": "ember-quickstart/components/rental.hbs",
     "isStrictMode": false
   });
@@ -632,7 +680,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+9628bea0"});
+            require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+083b0f45"});
           }
         
 //# sourceMappingURL=ember-quickstart.map

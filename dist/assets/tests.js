@@ -125,6 +125,86 @@ define("ember-quickstart/tests/integration/components/jumbo-test", ["qunit", "em
     });
   });
 });
+define("ember-quickstart/tests/integration/components/map-test", ["qunit", "ember-quickstart/tests/helpers", "@ember/test-helpers", "ember-quickstart/config/environment", "@ember/template-factory"], function (_qunit, _helpers, _testHelpers, _environment, _templateFactory) {
+  "use strict";
+
+  0; //eaimeta@70e063a35619d71f0,"qunit",0,"ember-quickstart/tests/helpers",0,"@ember/test-helpers",0,"ember-quickstart/config/environment",0,"@ember/template-factory"eaimeta@70e063a35619d71f
+  (0, _qunit.module)('Integration | Component | map', function (hooks) {
+    (0, _helpers.setupRenderingTest)(hooks);
+    (0, _qunit.test)('it renders a map image for the specified parameters', async function (assert) {
+      // Set any properties with this.set('myProperty', 'value');
+      // Handle any actions with this.set('myAction', function(val) { ... });
+
+      await (0, _testHelpers.render)((0, _templateFactory.createTemplateFactory)(
+      /*
+        <Map
+            @lat="37.7797"
+            @lng="-122.4184"
+            @zoom="10"
+            @width="150"
+            @height="120"
+          />
+      */
+      {
+        "id": "LRG7gu8G",
+        "block": "[[[8,[39,0],null,[[\"@lat\",\"@lng\",\"@zoom\",\"@width\",\"@height\"],[\"37.7797\",\"-122.4184\",\"10\",\"150\",\"120\"]],null]],[],false,[\"map\"]]",
+        "moduleName": "/Users/lizethvera/Code/ember-app/ember-quickstart/tests/integration/components/map-test.js",
+        "isStrictMode": false
+      }));
+      assert.dom('.map img').exists().hasAttribute('alt', 'Map image at coordinates 37.7797,-122.4184').hasAttribute('src').hasAttribute('width', '150').hasAttribute('height', '120');
+      let {
+        src
+      } = (0, _testHelpers.find)('.map img');
+      let token = encodeURIComponent(_environment.default.MAPBOX_ACCESS_TOKEN);
+      assert.ok(src.startsWith('https://api.mapbox.com/'), 'the src starts with "https://api.mapbox.com/"');
+      assert.ok(src.includes('-122.4184,37.7797,10'), 'the src should include the lng,lat,zoom parameter');
+      assert.ok(src.includes('150x120@2x'), 'the src should include the width,height and @2x parameter');
+      assert.ok(src.includes(`access_token=${token}`), 'the src should include the escaped access token');
+    });
+    (0, _qunit.test)('the default alt attribute can be overridden', async function (assert) {
+      await (0, _testHelpers.render)((0, _templateFactory.createTemplateFactory)(
+      /*
+        <Map
+            @lat="37.7797"
+            @lng="-122.4184"
+            @zoom="10"
+            @width="150"
+            @height="120"
+            alt="A map of San Francisco"
+          />
+      */
+      {
+        "id": "Y/pJlfbP",
+        "block": "[[[8,[39,0],[[24,\"alt\",\"A map of San Francisco\"]],[[\"@lat\",\"@lng\",\"@zoom\",\"@width\",\"@height\"],[\"37.7797\",\"-122.4184\",\"10\",\"150\",\"120\"]],null]],[],false,[\"map\"]]",
+        "moduleName": "/Users/lizethvera/Code/ember-app/ember-quickstart/tests/integration/components/map-test.js",
+        "isStrictMode": false
+      }));
+      assert.dom('.map img').hasAttribute('alt', 'A map of San Francisco');
+    });
+    (0, _qunit.test)('the src, width and height attributes cannot be overridden', async function (assert) {
+      await (0, _testHelpers.render)((0, _templateFactory.createTemplateFactory)(
+      /*
+        <Map
+            @lat="37.7797"
+            @lng="-122.4184"
+            @zoom="10"
+            @width="150"
+            @height="120"
+            src="/assets/images/teaching-tomster.png"
+            width="200"
+            height="300"
+          />
+      */
+      {
+        "id": "Vw0b1sTD",
+        "block": "[[[8,[39,0],[[24,\"src\",\"/assets/images/teaching-tomster.png\"],[24,\"width\",\"200\"],[24,\"height\",\"300\"]],[[\"@lat\",\"@lng\",\"@zoom\",\"@width\",\"@height\"],[\"37.7797\",\"-122.4184\",\"10\",\"150\",\"120\"]],null]],[],false,[\"map\"]]",
+        "moduleName": "/Users/lizethvera/Code/ember-app/ember-quickstart/tests/integration/components/map-test.js",
+        "isStrictMode": false
+      }));
+      assert.dom('.map img').hasAttribute('src', /^https:\/\/api\.mapbox\.com\//).hasAttribute('width', '150').hasAttribute('height', '120');
+    });
+  });
+});
 define("ember-quickstart/tests/integration/components/rental-test", ["qunit", "ember-quickstart/tests/helpers", "@ember/test-helpers", "@ember/template-factory"], function (_qunit, _helpers, _testHelpers, _templateFactory) {
   "use strict";
 
@@ -151,6 +231,7 @@ define("ember-quickstart/tests/integration/components/rental-test", ["qunit", "e
       assert.dom('article .detail.type').includesText('Standalone');
       assert.dom('article .detail.location').includesText('San Fransisco');
       assert.dom('article .detail.bedrooms').includesText('15');
+      assert.dom('article .map').exists();
     });
   });
 });
