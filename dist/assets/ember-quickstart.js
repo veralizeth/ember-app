@@ -93,6 +93,43 @@
   });
   var _default = _exports.default = (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, (0, _templateOnly.default)());
 });
+;define("ember-quickstart/components/rental", ["exports", "@ember/component", "@ember/component/template-only", "@ember/template-factory"], function (_exports, _component, _templateOnly, _templateFactory) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  0; //eaimeta@70e063a35619d71f0,"@ember/component/template-only",0,"@ember/template-factory",0,"@ember/component"eaimeta@70e063a35619d71f
+  const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
+  /*
+    {{yield}}
+  <article>
+      <div>
+          <h3>Grand Old Mansion</h3>
+          <div class="detail owner">
+              <span>Owner:</span> Veruca Salt
+          </div>
+          <div class="detail type">
+              <span>Type:</span> Standalone
+          </div>
+          <div class="detail location">
+              <span>Location:</span> San Fransisco
+          </div>
+          <div class="detail bedrooms">
+              <span>Number of bedrooms:</span> 15
+          </div>
+      </div>
+  </article>
+  */
+  {
+    "id": "jPpJXXyd",
+    "block": "[[[18,1,null],[1,\"\\n\"],[10,\"article\"],[12],[1,\"\\n    \"],[10,0],[12],[1,\"\\n        \"],[10,\"h3\"],[12],[1,\"Grand Old Mansion\"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail owner\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Owner:\"],[13],[1,\" Veruca Salt\\n        \"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail type\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Type:\"],[13],[1,\" Standalone\\n        \"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail location\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Location:\"],[13],[1,\" San Fransisco\\n        \"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail bedrooms\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Number of bedrooms:\"],[13],[1,\" 15\\n        \"],[13],[1,\"\\n    \"],[13],[1,\"\\n\"],[13]],[\"&default\"],false,[\"yield\",\"article\",\"div\",\"h3\",\"span\"]]",
+    "moduleName": "ember-quickstart/components/rental.hbs",
+    "isStrictMode": false
+  });
+  var _default = _exports.default = (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, (0, _templateOnly.default)());
+});
 ;define("ember-quickstart/components/welcome-page", ["exports", "ember-welcome-page/components/welcome-page"], function (_exports, _welcomePage) {
   "use strict";
 
