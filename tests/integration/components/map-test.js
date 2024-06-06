@@ -64,6 +64,8 @@ module('Integration | Component | map', function (hooks) {
     assert.dom('.map img').hasAttribute('alt', 'A map of San Francisco');
   });
 
+
+
   test('the src, width and height attributes cannot be overridden', async function (assert) {
     await render(hbs`<Map
       @lat="37.7797"

@@ -76,19 +76,33 @@
     <img
       alt='Map image at coordinates {{@lat}},{{@lng}}'
       ...attributes
-      src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/{{@lng}},{{@lat}},{{@zoom}}/{{@width}}x{{@height}}@2x?access_token={{this.token}}'
+      src={{this.src}}
       width={{@width}}
       height={{@height}}
     />
   </div>
   */
   {
-    "id": "wRUEiMPu",
-    "block": "[[[18,7,null],[1,\"\\n\"],[10,0],[14,0,\"map\"],[12],[1,\"\\n  \"],[11,\"img\"],[16,\"alt\",[29,[\"Map image at coordinates \",[30,1],\",\",[30,2]]]],[17,3],[16,\"src\",[29,[\"https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/\",[30,2],\",\",[30,1],\",\",[30,4],\"/\",[30,5],\"x\",[30,6],\"@2x?access_token=\",[30,0,[\"token\"]]]]],[16,\"width\",[30,5]],[16,\"height\",[30,6]],[12],[13],[1,\"\\n\"],[13]],[\"@lat\",\"@lng\",\"&attrs\",\"@zoom\",\"@width\",\"@height\",\"&default\"],false,[\"yield\",\"div\",\"img\"]]",
+    "id": "rU/0dbwR",
+    "block": "[[[18,6,null],[1,\"\\n\"],[10,0],[14,0,\"map\"],[12],[1,\"\\n  \"],[11,\"img\"],[16,\"alt\",[29,[\"Map image at coordinates \",[30,1],\",\",[30,2]]]],[17,3],[16,\"src\",[30,0,[\"src\"]]],[16,\"width\",[30,4]],[16,\"height\",[30,5]],[12],[13],[1,\"\\n\"],[13]],[\"@lat\",\"@lng\",\"&attrs\",\"@width\",\"@height\",\"&default\"],false,[\"yield\",\"div\",\"img\"]]",
     "moduleName": "ember-quickstart/components/map.hbs",
     "isStrictMode": false
   });
+  const MAPBOX_API = 'https://api.mapbox.com/styles/v1/mapbox/streets-v11/static';
   class MapComponent extends _component2.default {
+    get src() {
+      let {
+        lng,
+        lat,
+        width,
+        height,
+        zoom
+      } = this.args;
+      let coordinates = `${lng},${lat},${zoom}`;
+      let dimensions = `${width}x${height}`;
+      let accessToken = `access_token=${this.token}`;
+      return `${MAPBOX_API}/${coordinates}/${dimensions}@2x?${accessToken}`;
+    }
     get token() {
       return encodeURIComponent(_environment.default.MAPBOX_ACCESS_TOKEN);
     }
@@ -169,14 +183,13 @@
       @zoom='9'
       @width='150'
       @height='150'
-      alt='A
-      map of Grand Old Mansion'
+      alt='A map of Grand Old Mansion'
     />
   </article>
   */
   {
-    "id": "pCZKjDpb",
-    "block": "[[[18,1,null],[1,\"\\n\"],[10,\"article\"],[14,0,\"rental\"],[12],[1,\"\\n  \"],[8,[39,2],[[24,\"src\",\"https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg\"],[24,\"alt\",\"A picture of Grand Old Mansion\"]],null,null],[1,\"\\n  \"],[10,0],[14,0,\"details\"],[12],[1,\"\\n    \"],[10,\"h3\"],[12],[1,\"Grand Old Mansion\"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail owner\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Owner:\"],[13],[1,\"\\n      Veruca Salt\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail type\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Type:\"],[13],[1,\"\\n      Standalone\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail location\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Location:\"],[13],[1,\"\\n      San Fransisco\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail bedrooms\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Number of bedrooms:\"],[13],[1,\"\\n      15\\n    \"],[13],[1,\"\\n  \"],[13],[1,\"\\n  \"],[8,[39,6],[[24,\"alt\",\"A\\n    map of Grand Old Mansion\"]],[[\"@lat\",\"@lng\",\"@zoom\",\"@width\",\"@height\"],[\"37.7749\",\"-122.4194\",\"9\",\"150\",\"150\"]],null],[1,\"\\n\"],[13]],[\"&default\"],false,[\"yield\",\"article\",\"rental/image\",\"div\",\"h3\",\"span\",\"map\"]]",
+    "id": "8oFZs5Fo",
+    "block": "[[[18,1,null],[1,\"\\n\"],[10,\"article\"],[14,0,\"rental\"],[12],[1,\"\\n  \"],[8,[39,2],[[24,\"src\",\"https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg\"],[24,\"alt\",\"A picture of Grand Old Mansion\"]],null,null],[1,\"\\n  \"],[10,0],[14,0,\"details\"],[12],[1,\"\\n    \"],[10,\"h3\"],[12],[1,\"Grand Old Mansion\"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail owner\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Owner:\"],[13],[1,\"\\n      Veruca Salt\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail type\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Type:\"],[13],[1,\"\\n      Standalone\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail location\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Location:\"],[13],[1,\"\\n      San Fransisco\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail bedrooms\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Number of bedrooms:\"],[13],[1,\"\\n      15\\n    \"],[13],[1,\"\\n  \"],[13],[1,\"\\n  \"],[8,[39,6],[[24,\"alt\",\"A map of Grand Old Mansion\"]],[[\"@lat\",\"@lng\",\"@zoom\",\"@width\",\"@height\"],[\"37.7749\",\"-122.4194\",\"9\",\"150\",\"150\"]],null],[1,\"\\n\"],[13]],[\"&default\"],false,[\"yield\",\"article\",\"rental/image\",\"div\",\"h3\",\"span\",\"map\"]]",
     "moduleName": "ember-quickstart/components/rental.hbs",
     "isStrictMode": false
   });
