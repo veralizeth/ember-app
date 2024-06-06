@@ -180,6 +180,31 @@ define("ember-quickstart/tests/integration/components/rental/image-test", ["quni
       }));
       assert.dom('.image img').exists().hasAttribute('src', '/assets/images/teaching-tomster.png').hasAttribute('alt', 'Teaching Tomster');
     });
+    (0, _qunit.test)('clicking on the component toggles its size', async function (assert) {
+      await (0, _testHelpers.render)((0, _templateFactory.createTemplateFactory)(
+      /*
+        
+            <Rental::Image
+              src="/assets/images/teaching-tomster.png"
+              alt="Teaching Tomster"
+            />
+      */
+      {
+        "id": "GmKdAVt2",
+        "block": "[[[1,\"\\n      \"],[8,[39,0],[[24,\"src\",\"/assets/images/teaching-tomster.png\"],[24,\"alt\",\"Teaching Tomster\"]],null,null]],[],false,[\"rental/image\"]]",
+        "moduleName": "/Users/lizethvera/Code/ember-app/ember-quickstart/tests/integration/components/rental/image-test.js",
+        "isStrictMode": false
+      }));
+      assert.dom('button.image').exists();
+      assert.dom('.image').doesNotHaveClass('large');
+      assert.dom('.image small').hasText('View Larger');
+      await (0, _testHelpers.click)('button.image');
+      assert.dom('.image').hasClass('large');
+      assert.dom('.image small').hasText('View Smaller');
+      await (0, _testHelpers.click)('button.image');
+      assert.dom('.image').doesNotHaveClass('large');
+      assert.dom('.image small').hasText('View Larger');
+    });
   });
 });
 define("ember-quickstart/tests/test-helper", ["ember-quickstart/app", "ember-quickstart/config/environment", "qunit", "@ember/test-helpers", "qunit-dom", "ember-qunit"], function (_app, _environment, QUnit, _testHelpers, _qunitDom, _emberQunit) {
