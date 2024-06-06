@@ -151,21 +151,14 @@
   function _initializerWarningHelper(r, e) { throw Error("Decorating class property failed. Please ensure that transform-class-properties is enabled and runs after the decorators transform."); }
   const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
   /*
-    {{#if this.isLarge}}
-      <button type='button' class="image large" {{on "click" this.toggleSize}}>
-          <img ...attributes>
-          <small>View Smaller</small>
-      </button>
-  {{else}}
-      <button type='button' class="image" {{on "click" this.toggleSize}}>
-          <img ...attributes>
-          <small>View Larger</small>
-      </button>
-  {{/if}}
+    <button type='button' class="image {{if this.isLarge "large"}}" {{on "click" this.toggleSize}}>
+      <img ...attributes>
+      <small>View {{if this.isLarge "Smaller" "Larger"}}</small>
+  </button>
   */
   {
-    "id": "NhSWjXP+",
-    "block": "[[[41,[30,0,[\"isLarge\"]],[[[1,\"    \"],[11,\"button\"],[24,0,\"image large\"],[24,4,\"button\"],[4,[38,2],[\"click\",[30,0,[\"toggleSize\"]]],null],[12],[1,\"\\n        \"],[11,\"img\"],[17,1],[12],[13],[1,\"\\n        \"],[10,\"small\"],[12],[1,\"View Smaller\"],[13],[1,\"\\n    \"],[13],[1,\"\\n\"]],[]],[[[1,\"    \"],[11,\"button\"],[24,0,\"image\"],[24,4,\"button\"],[4,[38,2],[\"click\",[30,0,[\"toggleSize\"]]],null],[12],[1,\"\\n        \"],[11,\"img\"],[17,1],[12],[13],[1,\"\\n        \"],[10,\"small\"],[12],[1,\"View Larger\"],[13],[1,\"\\n    \"],[13],[1,\"\\n\"]],[]]]],[\"&attrs\"],false,[\"if\",\"button\",\"on\",\"img\",\"small\"]]",
+    "id": "Kd9O+qDt",
+    "block": "[[[11,\"button\"],[16,0,[29,[\"image \",[52,[30,0,[\"isLarge\"]],\"large\"]]]],[24,4,\"button\"],[4,[38,2],[\"click\",[30,0,[\"toggleSize\"]]],null],[12],[1,\"\\n    \"],[11,\"img\"],[17,1],[12],[13],[1,\"\\n    \"],[10,\"small\"],[12],[1,\"View \"],[1,[52,[30,0,[\"isLarge\"]],\"Smaller\",\"Larger\"]],[13],[1,\"\\n\"],[13]],[\"&attrs\"],false,[\"button\",\"if\",\"on\",\"img\",\"small\"]]",
     "moduleName": "ember-quickstart/components/rental/image.hbs",
     "isStrictMode": false
   });
@@ -639,7 +632,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+7354a0f6"});
+            require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+9628bea0"});
           }
         
 //# sourceMappingURL=ember-quickstart.map
