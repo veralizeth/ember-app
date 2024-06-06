@@ -131,7 +131,7 @@ define("ember-quickstart/tests/integration/components/rental-test", ["qunit", "e
   0; //eaimeta@70e063a35619d71f0,"qunit",0,"ember-quickstart/tests/helpers",0,"@ember/test-helpers",0,"@ember/template-factory"eaimeta@70e063a35619d71f
   (0, _qunit.module)('Integration | Component | rental', function (hooks) {
     (0, _helpers.setupRenderingTest)(hooks);
-    (0, _qunit.test)('it renders', async function (assert) {
+    (0, _qunit.test)('it renders information about a rental property', async function (assert) {
       // Set any properties with this.set('myProperty', 'value');
       // Handle any actions with this.set('myAction', function(val) { ... });
 
@@ -145,24 +145,12 @@ define("ember-quickstart/tests/integration/components/rental-test", ["qunit", "e
         "moduleName": "/Users/lizethvera/Code/ember-app/ember-quickstart/tests/integration/components/rental-test.js",
         "isStrictMode": false
       }));
-      assert.dom().hasText('');
-
-      // Template block usage:
-      await (0, _testHelpers.render)((0, _templateFactory.createTemplateFactory)(
-      /*
-        
-            <Rental>
-              template block text
-            </Rental>
-          
-      */
-      {
-        "id": "bQR2IgQ7",
-        "block": "[[[1,\"\\n      \"],[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n        template block text\\n      \"]],[]]]]],[1,\"\\n    \"]],[],false,[\"rental\"]]",
-        "moduleName": "/Users/lizethvera/Code/ember-app/ember-quickstart/tests/integration/components/rental-test.js",
-        "isStrictMode": false
-      }));
-      assert.dom().hasText('template block text');
+      assert.dom('article').hasClass('rental');
+      assert.dom('article h3').hasText('Grand Old Mansion');
+      assert.dom('article .detail.owner').includesText('Veruca Salt');
+      assert.dom('article .detail.type').includesText('Standalone');
+      assert.dom('article .detail.location').includesText('San Fransisco');
+      assert.dom('article .detail.bedrooms').includesText('15');
     });
   });
 });

@@ -104,7 +104,7 @@
   const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
   /*
     {{yield}}
-  <article>
+  <article class="rental">
       <div>
           <h3>Grand Old Mansion</h3>
           <div class="detail owner">
@@ -123,8 +123,8 @@
   </article>
   */
   {
-    "id": "jPpJXXyd",
-    "block": "[[[18,1,null],[1,\"\\n\"],[10,\"article\"],[12],[1,\"\\n    \"],[10,0],[12],[1,\"\\n        \"],[10,\"h3\"],[12],[1,\"Grand Old Mansion\"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail owner\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Owner:\"],[13],[1,\" Veruca Salt\\n        \"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail type\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Type:\"],[13],[1,\" Standalone\\n        \"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail location\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Location:\"],[13],[1,\" San Fransisco\\n        \"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail bedrooms\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Number of bedrooms:\"],[13],[1,\" 15\\n        \"],[13],[1,\"\\n    \"],[13],[1,\"\\n\"],[13]],[\"&default\"],false,[\"yield\",\"article\",\"div\",\"h3\",\"span\"]]",
+    "id": "D7zJAlWU",
+    "block": "[[[18,1,null],[1,\"\\n\"],[10,\"article\"],[14,0,\"rental\"],[12],[1,\"\\n    \"],[10,0],[12],[1,\"\\n        \"],[10,\"h3\"],[12],[1,\"Grand Old Mansion\"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail owner\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Owner:\"],[13],[1,\" Veruca Salt\\n        \"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail type\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Type:\"],[13],[1,\" Standalone\\n        \"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail location\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Location:\"],[13],[1,\" San Fransisco\\n        \"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail bedrooms\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Number of bedrooms:\"],[13],[1,\" 15\\n        \"],[13],[1,\"\\n    \"],[13],[1,\"\\n\"],[13]],[\"&default\"],false,[\"yield\",\"article\",\"div\",\"h3\",\"span\"]]",
     "moduleName": "ember-quickstart/components/rental.hbs",
     "isStrictMode": false
   });
@@ -446,10 +446,18 @@
     <p>We hope you find exactly what you're looking for in a place to stay.</p>
     <LinkTo @route="about" class="button">About Us</LinkTo>
   </Jumbo>
+  
+  <div class="rentals">
+    <ul class="results">
+      <li><Rental /></li>
+      <li><Rental /></li>
+      <li><Rental /></li>
+    </ul>
+  </div>
   */
   {
-    "id": "Gx7VEGmV",
-    "block": "[[[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n  \"],[10,\"h2\"],[12],[1,\"Welcome to Super Rentals!\"],[13],[1,\"\\n  \"],[10,2],[12],[1,\"We hope you find exactly what you're looking for in a place to stay.\"],[13],[1,\"\\n  \"],[8,[39,3],[[24,0,\"button\"]],[[\"@route\"],[\"about\"]],[[\"default\"],[[[[1,\"About Us\"]],[]]]]],[1,\"\\n\"]],[]]]]]],[],false,[\"jumbo\",\"h2\",\"p\",\"link-to\"]]",
+    "id": "12RlCecC",
+    "block": "[[[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n  \"],[10,\"h2\"],[12],[1,\"Welcome to Super Rentals!\"],[13],[1,\"\\n  \"],[10,2],[12],[1,\"We hope you find exactly what you're looking for in a place to stay.\"],[13],[1,\"\\n  \"],[8,[39,3],[[24,0,\"button\"]],[[\"@route\"],[\"about\"]],[[\"default\"],[[[[1,\"About Us\"]],[]]]]],[1,\"\\n\"]],[]]]]],[1,\"\\n\\n\"],[10,0],[14,0,\"rentals\"],[12],[1,\"\\n  \"],[10,\"ul\"],[14,0,\"results\"],[12],[1,\"\\n    \"],[10,\"li\"],[12],[8,[39,7],null,null,null],[13],[1,\"\\n    \"],[10,\"li\"],[12],[8,[39,7],null,null,null],[13],[1,\"\\n    \"],[10,\"li\"],[12],[8,[39,7],null,null,null],[13],[1,\"\\n  \"],[13],[1,\"\\n\"],[13]],[],false,[\"jumbo\",\"h2\",\"p\",\"link-to\",\"div\",\"ul\",\"li\",\"rental\"]]",
     "moduleName": "ember-quickstart/templates/index.hbs",
     "isStrictMode": false
   });
