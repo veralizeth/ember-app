@@ -160,38 +160,25 @@ define("ember-quickstart/tests/integration/components/rental/image-test", ["quni
   0; //eaimeta@70e063a35619d71f0,"qunit",0,"ember-quickstart/tests/helpers",0,"@ember/test-helpers",0,"@ember/template-factory"eaimeta@70e063a35619d71f
   (0, _qunit.module)('Integration | Component | rental/image', function (hooks) {
     (0, _helpers.setupRenderingTest)(hooks);
-    (0, _qunit.test)('it renders', async function (assert) {
+    (0, _qunit.test)('it renders the given image', async function (assert) {
       // Set any properties with this.set('myProperty', 'value');
       // Handle any actions with this.set('myAction', function(val) { ... });
 
       await (0, _testHelpers.render)((0, _templateFactory.createTemplateFactory)(
       /*
-        <Rental::Image />
-      */
-      {
-        "id": "aw2mPmFe",
-        "block": "[[[8,[39,0],null,null,null]],[],false,[\"rental/image\"]]",
-        "moduleName": "/Users/lizethvera/Code/ember-app/ember-quickstart/tests/integration/components/rental/image-test.js",
-        "isStrictMode": false
-      }));
-      assert.dom().hasText('');
-
-      // Template block usage:
-      await (0, _testHelpers.render)((0, _templateFactory.createTemplateFactory)(
-      /*
         
-            <Rental::Image>
-              template block text
-            </Rental::Image>
-          
+            <Rental::Image
+              src="/assets/images/teaching-tomster.png"
+              alt="Teaching Tomster"
+            />
       */
       {
-        "id": "X4Kj75o8",
-        "block": "[[[1,\"\\n      \"],[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n        template block text\\n      \"]],[]]]]],[1,\"\\n    \"]],[],false,[\"rental/image\"]]",
+        "id": "GmKdAVt2",
+        "block": "[[[1,\"\\n      \"],[8,[39,0],[[24,\"src\",\"/assets/images/teaching-tomster.png\"],[24,\"alt\",\"Teaching Tomster\"]],null,null]],[],false,[\"rental/image\"]]",
         "moduleName": "/Users/lizethvera/Code/ember-app/ember-quickstart/tests/integration/components/rental/image-test.js",
         "isStrictMode": false
       }));
-      assert.dom().hasText('template block text');
+      assert.dom('.image img').exists().hasAttribute('src', '/assets/images/teaching-tomster.png').hasAttribute('alt', 'Teaching Tomster');
     });
   });
 });
