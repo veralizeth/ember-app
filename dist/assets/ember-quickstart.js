@@ -134,28 +134,63 @@
   });
   var _default = _exports.default = (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, (0, _templateOnly.default)());
 });
-;define("ember-quickstart/components/rental/image", ["exports", "@ember/component", "@ember/component/template-only", "@ember/template-factory"], function (_exports, _component, _templateOnly, _templateFactory) {
+;define("ember-quickstart/components/rental/image", ["exports", "@ember/component", "@glimmer/component", "@glimmer/tracking", "@ember/object", "@ember/template-factory"], function (_exports, _component, _component2, _tracking, _object, _templateFactory) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
     value: true
   });
   _exports.default = void 0;
-  0; //eaimeta@70e063a35619d71f0,"@ember/component/template-only",0,"@ember/template-factory",0,"@ember/component"eaimeta@70e063a35619d71f
+  var _class, _descriptor;
+  0; //eaimeta@70e063a35619d71f0,"@glimmer/component",0,"@glimmer/tracking",0,"@ember/object",0,"@ember/template-factory",0,"@ember/component"eaimeta@70e063a35619d71f
+  function _initializerDefineProperty(e, i, r, l) { r && Object.defineProperty(e, i, { enumerable: r.enumerable, configurable: r.configurable, writable: r.writable, value: r.initializer ? r.initializer.call(l) : void 0 }); }
+  function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+  function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
+  function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+  function _applyDecoratedDescriptor(i, e, r, n, l) { var a = {}; return Object.keys(n).forEach(function (i) { a[i] = n[i]; }), a.enumerable = !!a.enumerable, a.configurable = !!a.configurable, ("value" in a || a.initializer) && (a.writable = !0), a = r.slice().reverse().reduce(function (r, n) { return n(i, e, r) || r; }, a), l && void 0 !== a.initializer && (a.value = a.initializer ? a.initializer.call(l) : void 0, a.initializer = void 0), void 0 === a.initializer && (Object.defineProperty(i, e, a), a = null), a; }
+  function _initializerWarningHelper(r, e) { throw Error("Decorating class property failed. Please ensure that transform-class-properties is enabled and runs after the decorators transform."); }
   const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
   /*
-    {{yield}}
-  <div class="image">
-      <img ...attributes>
-  </div>
+    {{#if this.isLarge}}
+      <button type='button' class="image large" {{on "click" this.toggleSize}}>
+          <img ...attributes>
+          <small>View Smaller</small>
+      </button>
+  {{else}}
+      <button type='button' class="image" {{on "click" this.toggleSize}}>
+          <img ...attributes>
+          <small>View Larger</small>
+      </button>
+  {{/if}}
   */
   {
-    "id": "x26ySuYE",
-    "block": "[[[18,2,null],[1,\"\\n\"],[10,0],[14,0,\"image\"],[12],[1,\"\\n    \"],[11,\"img\"],[17,1],[12],[13],[1,\"\\n\"],[13]],[\"&attrs\",\"&default\"],false,[\"yield\",\"div\",\"img\"]]",
+    "id": "NhSWjXP+",
+    "block": "[[[41,[30,0,[\"isLarge\"]],[[[1,\"    \"],[11,\"button\"],[24,0,\"image large\"],[24,4,\"button\"],[4,[38,2],[\"click\",[30,0,[\"toggleSize\"]]],null],[12],[1,\"\\n        \"],[11,\"img\"],[17,1],[12],[13],[1,\"\\n        \"],[10,\"small\"],[12],[1,\"View Smaller\"],[13],[1,\"\\n    \"],[13],[1,\"\\n\"]],[]],[[[1,\"    \"],[11,\"button\"],[24,0,\"image\"],[24,4,\"button\"],[4,[38,2],[\"click\",[30,0,[\"toggleSize\"]]],null],[12],[1,\"\\n        \"],[11,\"img\"],[17,1],[12],[13],[1,\"\\n        \"],[10,\"small\"],[12],[1,\"View Larger\"],[13],[1,\"\\n    \"],[13],[1,\"\\n\"]],[]]]],[\"&attrs\"],false,[\"if\",\"button\",\"on\",\"img\",\"small\"]]",
     "moduleName": "ember-quickstart/components/rental/image.hbs",
     "isStrictMode": false
   });
-  var _default = _exports.default = (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, (0, _templateOnly.default)());
+  let RentalImageComponent = _exports.default = (_class = class RentalImageComponent extends _component2.default {
+    constructor(...args) {
+      super(...args);
+      // How a constrictor look like
+      // constructor(...args){
+      //     super(...args);
+      //     this.isLarge = false;
+      // }
+      _initializerDefineProperty(this, "isLarge", _descriptor, this);
+    }
+    toggleSize() {
+      this.isLarge = !this.isLarge;
+    }
+  }, (_descriptor = _applyDecoratedDescriptor(_class.prototype, "isLarge", [_tracking.tracked], {
+    configurable: true,
+    enumerable: true,
+    writable: true,
+    initializer: function () {
+      return false;
+    }
+  }), _applyDecoratedDescriptor(_class.prototype, "toggleSize", [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, "toggleSize"), _class.prototype)), _class);
+  (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, RentalImageComponent);
 });
 ;define("ember-quickstart/components/welcome-page", ["exports", "ember-welcome-page/components/welcome-page"], function (_exports, _welcomePage) {
   "use strict";
