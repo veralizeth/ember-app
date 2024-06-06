@@ -105,7 +105,11 @@
   /*
     {{yield}}
   <article class="rental">
-      <div>
+      <Rental::Image
+          src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg"
+          alt="A picture of Grand Old Mansion"
+      />
+      <div class="details">
           <h3>Grand Old Mansion</h3>
           <div class="detail owner">
               <span>Owner:</span> Veruca Salt
@@ -123,9 +127,32 @@
   </article>
   */
   {
-    "id": "D7zJAlWU",
-    "block": "[[[18,1,null],[1,\"\\n\"],[10,\"article\"],[14,0,\"rental\"],[12],[1,\"\\n    \"],[10,0],[12],[1,\"\\n        \"],[10,\"h3\"],[12],[1,\"Grand Old Mansion\"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail owner\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Owner:\"],[13],[1,\" Veruca Salt\\n        \"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail type\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Type:\"],[13],[1,\" Standalone\\n        \"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail location\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Location:\"],[13],[1,\" San Fransisco\\n        \"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail bedrooms\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Number of bedrooms:\"],[13],[1,\" 15\\n        \"],[13],[1,\"\\n    \"],[13],[1,\"\\n\"],[13]],[\"&default\"],false,[\"yield\",\"article\",\"div\",\"h3\",\"span\"]]",
+    "id": "P48dQB5P",
+    "block": "[[[18,1,null],[1,\"\\n\"],[10,\"article\"],[14,0,\"rental\"],[12],[1,\"\\n    \"],[8,[39,2],[[24,\"src\",\"https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg\"],[24,\"alt\",\"A picture of Grand Old Mansion\"]],null,null],[1,\"\\n    \"],[10,0],[14,0,\"details\"],[12],[1,\"\\n        \"],[10,\"h3\"],[12],[1,\"Grand Old Mansion\"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail owner\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Owner:\"],[13],[1,\" Veruca Salt\\n        \"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail type\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Type:\"],[13],[1,\" Standalone\\n        \"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail location\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Location:\"],[13],[1,\" San Fransisco\\n        \"],[13],[1,\"\\n        \"],[10,0],[14,0,\"detail bedrooms\"],[12],[1,\"\\n            \"],[10,1],[12],[1,\"Number of bedrooms:\"],[13],[1,\" 15\\n        \"],[13],[1,\"\\n    \"],[13],[1,\"\\n\"],[13]],[\"&default\"],false,[\"yield\",\"article\",\"rental/image\",\"div\",\"h3\",\"span\"]]",
     "moduleName": "ember-quickstart/components/rental.hbs",
+    "isStrictMode": false
+  });
+  var _default = _exports.default = (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, (0, _templateOnly.default)());
+});
+;define("ember-quickstart/components/rental/image", ["exports", "@ember/component", "@ember/component/template-only", "@ember/template-factory"], function (_exports, _component, _templateOnly, _templateFactory) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  0; //eaimeta@70e063a35619d71f0,"@ember/component/template-only",0,"@ember/template-factory",0,"@ember/component"eaimeta@70e063a35619d71f
+  const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
+  /*
+    {{yield}}
+  <div class="image">
+      <img ...attributes>
+  </div>
+  */
+  {
+    "id": "x26ySuYE",
+    "block": "[[[18,2,null],[1,\"\\n\"],[10,0],[14,0,\"image\"],[12],[1,\"\\n    \"],[11,\"img\"],[17,1],[12],[13],[1,\"\\n\"],[13]],[\"&attrs\",\"&default\"],false,[\"yield\",\"div\",\"img\"]]",
+    "moduleName": "ember-quickstart/components/rental/image.hbs",
     "isStrictMode": false
   });
   var _default = _exports.default = (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, (0, _templateOnly.default)());
