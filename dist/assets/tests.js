@@ -256,13 +256,29 @@ define("ember-quickstart/tests/integration/components/rental-test", ["qunit", "e
       // Set any properties with this.set('myProperty', 'value');
       // Handle any actions with this.set('myAction', function(val) { ... });
 
+      this.setProperties({
+        rental: {
+          title: 'Grand Old Mansion',
+          owner: 'Veruca Salt',
+          city: 'San Francisco',
+          location: {
+            lat: 37.7749,
+            lng: -122.4194
+          },
+          category: 'Estate',
+          type: 'Standalone',
+          bedrooms: 15,
+          image: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg',
+          description: 'This grand old mansion sits on over 100 acres of rolling hills and dense redwood forests.'
+        }
+      });
       await (0, _testHelpers.render)((0, _templateFactory.createTemplateFactory)(
       /*
-        <Rental />
+        <Rental @rental={{this.rental}} />
       */
       {
-        "id": "4Q42oS4v",
-        "block": "[[[8,[39,0],null,null,null]],[],false,[\"rental\"]]",
+        "id": "9U31Y8eG",
+        "block": "[[[8,[39,0],null,[[\"@rental\"],[[30,0,[\"rental\"]]]],null]],[],false,[\"rental\"]]",
         "moduleName": "/Users/lizethvera/Code/ember-app/ember-quickstart/tests/integration/components/rental-test.js",
         "isStrictMode": false
       }));
@@ -270,7 +286,7 @@ define("ember-quickstart/tests/integration/components/rental-test", ["qunit", "e
       assert.dom('article h3').hasText('Grand Old Mansion');
       assert.dom('article .detail.owner').includesText('Veruca Salt');
       assert.dom('article .detail.type').includesText('Standalone');
-      assert.dom('article .detail.location').includesText('San Fransisco');
+      assert.dom('article .detail.location').includesText('San Francisco');
       assert.dom('article .detail.bedrooms').includesText('15');
       assert.dom('article .map').exists();
     });

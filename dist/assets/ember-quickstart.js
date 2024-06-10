@@ -155,26 +155,26 @@
     {{yield}}
   <article class='rental'>
     <Rental::Image
-      src='https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg'
-      alt='A picture of Grand Old Mansion'
+      src={{@rental.image}}
+      alt={{@rental.title}}
     />
     <div class='details'>
-      <h3>Grand Old Mansion</h3>
+      <h3>{{@rental.title}}</h3>
       <div class='detail owner'>
         <span>Owner:</span>
-        Veruca Salt
+        {{@rental.owner}}
       </div>
       <div class='detail type'>
         <span>Type:</span>
-        Standalone
+        {{@rental.type}}
       </div>
       <div class='detail location'>
         <span>Location:</span>
-        San Fransisco
+        {{@rental.city}}
       </div>
       <div class='detail bedrooms'>
         <span>Number of bedrooms:</span>
-        15
+        {{@rental.bedrooms}}
       </div>
     </div>
     <Map
@@ -188,8 +188,8 @@
   </article>
   */
   {
-    "id": "8oFZs5Fo",
-    "block": "[[[18,1,null],[1,\"\\n\"],[10,\"article\"],[14,0,\"rental\"],[12],[1,\"\\n  \"],[8,[39,2],[[24,\"src\",\"https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg\"],[24,\"alt\",\"A picture of Grand Old Mansion\"]],null,null],[1,\"\\n  \"],[10,0],[14,0,\"details\"],[12],[1,\"\\n    \"],[10,\"h3\"],[12],[1,\"Grand Old Mansion\"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail owner\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Owner:\"],[13],[1,\"\\n      Veruca Salt\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail type\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Type:\"],[13],[1,\"\\n      Standalone\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail location\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Location:\"],[13],[1,\"\\n      San Fransisco\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail bedrooms\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Number of bedrooms:\"],[13],[1,\"\\n      15\\n    \"],[13],[1,\"\\n  \"],[13],[1,\"\\n  \"],[8,[39,6],[[24,\"alt\",\"A map of Grand Old Mansion\"]],[[\"@lat\",\"@lng\",\"@zoom\",\"@width\",\"@height\"],[\"37.7749\",\"-122.4194\",\"9\",\"150\",\"150\"]],null],[1,\"\\n\"],[13]],[\"&default\"],false,[\"yield\",\"article\",\"rental/image\",\"div\",\"h3\",\"span\",\"map\"]]",
+    "id": "TVBzp9no",
+    "block": "[[[18,2,null],[1,\"\\n\"],[10,\"article\"],[14,0,\"rental\"],[12],[1,\"\\n  \"],[8,[39,2],[[16,\"src\",[30,1,[\"image\"]]],[16,\"alt\",[30,1,[\"title\"]]]],null,null],[1,\"\\n  \"],[10,0],[14,0,\"details\"],[12],[1,\"\\n    \"],[10,\"h3\"],[12],[1,[30,1,[\"title\"]]],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail owner\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Owner:\"],[13],[1,\"\\n      \"],[1,[30,1,[\"owner\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail type\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Type:\"],[13],[1,\"\\n      \"],[1,[30,1,[\"type\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail location\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Location:\"],[13],[1,\"\\n      \"],[1,[30,1,[\"city\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail bedrooms\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Number of bedrooms:\"],[13],[1,\"\\n      \"],[1,[30,1,[\"bedrooms\"]]],[1,\"\\n    \"],[13],[1,\"\\n  \"],[13],[1,\"\\n  \"],[8,[39,6],[[24,\"alt\",\"A map of Grand Old Mansion\"]],[[\"@lat\",\"@lng\",\"@zoom\",\"@width\",\"@height\"],[\"37.7749\",\"-122.4194\",\"9\",\"150\",\"150\"]],null],[1,\"\\n\"],[13]],[\"@rental\",\"&default\"],false,[\"yield\",\"article\",\"rental/image\",\"div\",\"h3\",\"span\",\"map\"]]",
     "moduleName": "ember-quickstart/components/rental.hbs",
     "isStrictMode": false
   });
@@ -423,6 +423,34 @@
     });
   });
 });
+;define("ember-quickstart/routes/index", ["exports", "@ember/routing/route"], function (_exports, _route) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  0; //eaimeta@70e063a35619d71f0,"@ember/routing/route"eaimeta@70e063a35619d71f
+  class IndexRoute extends _route.default {
+    async model() {
+      return {
+        title: 'Grand Old Mansion',
+        owner: 'Veruca Salt',
+        city: 'San Francisco',
+        location: {
+          lat: 37.7749,
+          lng: -122.4194
+        },
+        category: 'Estate',
+        type: 'Standalone',
+        bedrooms: 15,
+        image: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg',
+        description: 'This grand old mansion sits on over 100 acres of rolling hills and dense redwood forests.'
+      };
+    }
+  }
+  _exports.default = IndexRoute;
+});
 ;define("ember-quickstart/services/page-title", ["exports", "ember-page-title/services/page-title"], function (_exports, _pageTitle) {
   "use strict";
 
@@ -560,20 +588,20 @@
     <Jumbo>
     <h2>Welcome to Super Rentals!</h2>
     <p>We hope you find exactly what you're looking for in a place to stay.</p>
-    <LinkTo @route="about" class="button">About Us</LinkTo>
+    <LinkTo @route='about' class='button'>About Us</LinkTo>
   </Jumbo>
   
-  <div class="rentals">
-    <ul class="results">
-      <li><Rental /></li>
-      <li><Rental /></li>
-      <li><Rental /></li>
+  <div class='rentals'>
+    <ul class='results'>
+      <li><Rental @rental={{@model}} /></li>
+      <li><Rental @rental={{@model}} /></li>
+      <li><Rental @rental={{@model}} /></li>
     </ul>
   </div>
   */
   {
-    "id": "12RlCecC",
-    "block": "[[[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n  \"],[10,\"h2\"],[12],[1,\"Welcome to Super Rentals!\"],[13],[1,\"\\n  \"],[10,2],[12],[1,\"We hope you find exactly what you're looking for in a place to stay.\"],[13],[1,\"\\n  \"],[8,[39,3],[[24,0,\"button\"]],[[\"@route\"],[\"about\"]],[[\"default\"],[[[[1,\"About Us\"]],[]]]]],[1,\"\\n\"]],[]]]]],[1,\"\\n\\n\"],[10,0],[14,0,\"rentals\"],[12],[1,\"\\n  \"],[10,\"ul\"],[14,0,\"results\"],[12],[1,\"\\n    \"],[10,\"li\"],[12],[8,[39,7],null,null,null],[13],[1,\"\\n    \"],[10,\"li\"],[12],[8,[39,7],null,null,null],[13],[1,\"\\n    \"],[10,\"li\"],[12],[8,[39,7],null,null,null],[13],[1,\"\\n  \"],[13],[1,\"\\n\"],[13]],[],false,[\"jumbo\",\"h2\",\"p\",\"link-to\",\"div\",\"ul\",\"li\",\"rental\"]]",
+    "id": "Cebupy/a",
+    "block": "[[[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n  \"],[10,\"h2\"],[12],[1,\"Welcome to Super Rentals!\"],[13],[1,\"\\n  \"],[10,2],[12],[1,\"We hope you find exactly what you're looking for in a place to stay.\"],[13],[1,\"\\n  \"],[8,[39,3],[[24,0,\"button\"]],[[\"@route\"],[\"about\"]],[[\"default\"],[[[[1,\"About Us\"]],[]]]]],[1,\"\\n\"]],[]]]]],[1,\"\\n\\n\"],[10,0],[14,0,\"rentals\"],[12],[1,\"\\n  \"],[10,\"ul\"],[14,0,\"results\"],[12],[1,\"\\n    \"],[10,\"li\"],[12],[8,[39,7],null,[[\"@rental\"],[[30,1]]],null],[13],[1,\"\\n    \"],[10,\"li\"],[12],[8,[39,7],null,[[\"@rental\"],[[30,1]]],null],[13],[1,\"\\n    \"],[10,\"li\"],[12],[8,[39,7],null,[[\"@rental\"],[[30,1]]],null],[13],[1,\"\\n  \"],[13],[1,\"\\n\"],[13]],[\"@model\"],false,[\"jumbo\",\"h2\",\"p\",\"link-to\",\"div\",\"ul\",\"li\",\"rental\"]]",
     "moduleName": "ember-quickstart/templates/index.hbs",
     "isStrictMode": false
   });
@@ -693,7 +721,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+083b0f45"});
+            require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+ae866e5c"});
           }
         
 //# sourceMappingURL=ember-quickstart.map
