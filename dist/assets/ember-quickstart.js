@@ -431,22 +431,28 @@
   });
   _exports.default = void 0;
   0; //eaimeta@70e063a35619d71f0,"@ember/routing/route"eaimeta@70e063a35619d71f
+  const COMMUNITY_CATEGORIES = ['Condo', 'Townhouse', 'Apartment'];
   class IndexRoute extends _route.default {
     async model() {
-      return {
-        title: 'Grand Old Mansion',
-        owner: 'Veruca Salt',
-        city: 'San Francisco',
-        location: {
-          lat: 37.7749,
-          lng: -122.4194
-        },
-        category: 'Estate',
-        type: 'Standalone',
-        bedrooms: 15,
-        image: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg',
-        description: 'This grand old mansion sits on over 100 acres of rolling hills and dense redwood forests.'
-      };
+      let response = await fetch('api/rentals.json');
+      let {
+        data
+      } = await response.json();
+      return data.map(model => {
+        let {
+          attributes
+        } = model;
+        let type;
+        if (COMMUNITY_CATEGORIES.includes(attributes.category)) {
+          type = 'Community';
+        } else {
+          type = 'Standalone';
+        }
+        return {
+          type,
+          ...attributes
+        };
+      });
     }
   }
   _exports.default = IndexRoute;
@@ -593,15 +599,15 @@
   
   <div class='rentals'>
     <ul class='results'>
-      <li><Rental @rental={{@model}} /></li>
-      <li><Rental @rental={{@model}} /></li>
-      <li><Rental @rental={{@model}} /></li>
+      {{#each @model as |rental|}}
+        <li><Rental @rental={{rental}} /></li>
+      {{/each}}
     </ul>
   </div>
   */
   {
-    "id": "Cebupy/a",
-    "block": "[[[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n  \"],[10,\"h2\"],[12],[1,\"Welcome to Super Rentals!\"],[13],[1,\"\\n  \"],[10,2],[12],[1,\"We hope you find exactly what you're looking for in a place to stay.\"],[13],[1,\"\\n  \"],[8,[39,3],[[24,0,\"button\"]],[[\"@route\"],[\"about\"]],[[\"default\"],[[[[1,\"About Us\"]],[]]]]],[1,\"\\n\"]],[]]]]],[1,\"\\n\\n\"],[10,0],[14,0,\"rentals\"],[12],[1,\"\\n  \"],[10,\"ul\"],[14,0,\"results\"],[12],[1,\"\\n    \"],[10,\"li\"],[12],[8,[39,7],null,[[\"@rental\"],[[30,1]]],null],[13],[1,\"\\n    \"],[10,\"li\"],[12],[8,[39,7],null,[[\"@rental\"],[[30,1]]],null],[13],[1,\"\\n    \"],[10,\"li\"],[12],[8,[39,7],null,[[\"@rental\"],[[30,1]]],null],[13],[1,\"\\n  \"],[13],[1,\"\\n\"],[13]],[\"@model\"],false,[\"jumbo\",\"h2\",\"p\",\"link-to\",\"div\",\"ul\",\"li\",\"rental\"]]",
+    "id": "LhPl90e/",
+    "block": "[[[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n  \"],[10,\"h2\"],[12],[1,\"Welcome to Super Rentals!\"],[13],[1,\"\\n  \"],[10,2],[12],[1,\"We hope you find exactly what you're looking for in a place to stay.\"],[13],[1,\"\\n  \"],[8,[39,3],[[24,0,\"button\"]],[[\"@route\"],[\"about\"]],[[\"default\"],[[[[1,\"About Us\"]],[]]]]],[1,\"\\n\"]],[]]]]],[1,\"\\n\\n\"],[10,0],[14,0,\"rentals\"],[12],[1,\"\\n  \"],[10,\"ul\"],[14,0,\"results\"],[12],[1,\"\\n\"],[42,[28,[37,7],[[28,[37,7],[[30,1]],null]],null],null,[[[1,\"      \"],[10,\"li\"],[12],[8,[39,9],null,[[\"@rental\"],[[30,2]]],null],[13],[1,\"\\n\"]],[2]],null],[1,\"  \"],[13],[1,\"\\n\"],[13]],[\"@model\",\"rental\"],false,[\"jumbo\",\"h2\",\"p\",\"link-to\",\"div\",\"ul\",\"each\",\"-track-array\",\"li\",\"rental\"]]",
     "moduleName": "ember-quickstart/templates/index.hbs",
     "isStrictMode": false
   });
