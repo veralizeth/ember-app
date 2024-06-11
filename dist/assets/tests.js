@@ -469,6 +469,49 @@ define("ember-quickstart/tests/test-helper", ["ember-quickstart/app", "ember-qui
   (0, _qunitDom.setup)(QUnit.assert);
   (0, _emberQunit.start)();
 });
+define("ember-quickstart/tests/unit/models/rental-test", ["exports", "qunit", "ember-quickstart/tests/helpers", "ember-data/store"], function (_exports, _qunit, _helpers, _store) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function () {
+      return _store.default;
+    }
+  });
+  0; //eaimeta@70e063a35619d71f0,"qunit",0,"ember-quickstart/tests/helpers",0,"ember-data/store"eaimeta@70e063a35619d71f
+  (0, _qunit.module)('Unit | Model | rental', function (hooks) {
+    (0, _helpers.setupTest)(hooks);
+    (0, _qunit.test)('it has the right type', function (assert) {
+      let store = this.owner.lookup('service:store');
+      let rental = store.createRecord('rental', {
+        id: 'grand-old-mansion',
+        title: 'Grand Old Mansion',
+        owner: 'Veruca Salt',
+        city: 'San Francisco',
+        location: {
+          lat: 37.7749,
+          lng: -122.4194
+        },
+        category: 'Estate',
+        bedrooms: 15,
+        image: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg',
+        description: 'This grand old mansion sits on over 100 acres of rolling hills and dense redwood forests.'
+      });
+      assert.strictEqual(rental.type, 'Standalone');
+      rental.category = 'Condo';
+      assert.strictEqual(rental.type, 'Community');
+      rental.category = 'Townhouse';
+      assert.strictEqual(rental.type, 'Community');
+      rental.category = 'Apartment';
+      assert.strictEqual(rental.type, 'Community');
+      rental.category = 'Estate';
+      assert.strictEqual(rental.type, 'Standalone');
+    });
+  });
+});
 define('ember-quickstart/config/environment', [], function() {
   var prefix = 'ember-quickstart';
 try {
