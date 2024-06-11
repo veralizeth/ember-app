@@ -37,6 +37,11 @@ define("ember-quickstart/tests/acceptance/ember-app-test", ["qunit", "@ember/tes
       assert.dom('h1').containsText('SuperRentals');
       assert.dom('h2').containsText('Grand Old Mansion');
       assert.dom('.rental.detailed').exists();
+      assert.dom('.share.button').hasText('Share on Twitter');
+      let button = (0, _testHelpers.find)('.share.button');
+      let tweetURL = new URL(button.href);
+      assert.strictEqual(tweetURL.host, 'twitter.com');
+      assert.strictEqual(tweetURL.searchParams.get('url'), `${window.location.origin}/rentals/grand-old-mansion`);
     });
     (0, _qunit.test)('visiting /about', async function (assert) {
       await (0, _testHelpers.visit)('/about');
@@ -426,44 +431,33 @@ define("ember-quickstart/tests/integration/components/rental/image-test", ["quni
     });
   });
 });
-define("ember-quickstart/tests/integration/components/share-button-test", ["qunit", "ember-quickstart/tests/helpers", "@ember/test-helpers", "@ember/template-factory"], function (_qunit, _helpers, _testHelpers, _templateFactory) {
+define("ember-quickstart/tests/integration/components/share-button-test", ["qunit", "ember-quickstart/tests/helpers", "@ember/test-helpers", "@ember/service", "@ember/template-factory"], function (_qunit, _helpers, _testHelpers, _service, _templateFactory) {
   "use strict";
 
-  0; //eaimeta@70e063a35619d71f0,"qunit",0,"ember-quickstart/tests/helpers",0,"@ember/test-helpers",0,"@ember/template-factory"eaimeta@70e063a35619d71f
+  0; //eaimeta@70e063a35619d71f0,"qunit",0,"ember-quickstart/tests/helpers",0,"@ember/test-helpers",0,"@ember/service",0,"@ember/template-factory"eaimeta@70e063a35619d71f
+  const MOCK_URL = new URL('/foo/bar?baz=true#some-section', window.location.origin);
+  class MockRouterService extends _service.default {
+    get currentURL() {
+      return '/foo/bar?baz=true#some-section';
+    }
+  }
   (0, _qunit.module)('Integration | Component | share-button', function (hooks) {
     (0, _helpers.setupRenderingTest)(hooks);
-    (0, _qunit.test)('it renders', async function (assert) {
-      // Set any properties with this.set('myProperty', 'value');
-      // Handle any actions with this.set('myAction', function(val) { ... });
-
+    hooks.beforeEach(function () {
+      this.owner.register('service:router', MockRouterService);
+    });
+    (0, _qunit.test)('basic usage', async function (assert) {
       await (0, _testHelpers.render)((0, _templateFactory.createTemplateFactory)(
       /*
-        <ShareButton />
+        <ShareButton>Tweet this!</ShareButton>
       */
       {
-        "id": "gOEnnLXL",
-        "block": "[[[8,[39,0],null,null,null]],[],false,[\"share-button\"]]",
+        "id": "qpHOIyCx",
+        "block": "[[[8,[39,0],null,null,[[\"default\"],[[[[1,\"Tweet this!\"]],[]]]]]],[],false,[\"share-button\"]]",
         "moduleName": "/Users/lizethvera/Code/ember-app/ember-quickstart/tests/integration/components/share-button-test.js",
         "isStrictMode": false
       }));
-      assert.dom().hasText('');
-
-      // Template block usage:
-      await (0, _testHelpers.render)((0, _templateFactory.createTemplateFactory)(
-      /*
-        
-            <ShareButton>
-              template block text
-            </ShareButton>
-          
-      */
-      {
-        "id": "KTW2FOmp",
-        "block": "[[[1,\"\\n      \"],[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n        template block text\\n      \"]],[]]]]],[1,\"\\n    \"]],[],false,[\"share-button\"]]",
-        "moduleName": "/Users/lizethvera/Code/ember-app/ember-quickstart/tests/integration/components/share-button-test.js",
-        "isStrictMode": false
-      }));
-      assert.dom().hasText('template block text');
+      assert.dom('a').hasAttribute('target', '_blank').hasAttribute('rel', 'external nofollow noopener noreferrer').hasAttribute('href', `https://twitter.com/intent/tweet?url=${encodeURIComponent(MOCK_URL.href)}`).hasClass('share').hasClass('button').containsText('Tweet this!');
     });
   });
 });

@@ -207,9 +207,13 @@
     <Jumbo>
     <h2>{{@rental.title}}</h2>
     <p>Nice find! This looks like a nice place to stay near {{@rental.city}}.</p>
-    <a href="#" target="_blank" rel="external nofollow noopener noreferrer" class="share button">
+    <ShareButton
+      @text="Check out {{@rental.title}} on Super Rentals!"
+      @hashtags="vacation,travel,authentic,blessed,superrentals"
+      @via="emberjs"
+    >
       Share on Twitter
-    </a>
+      </ShareButton>
   </Jumbo>
   
   <article class="rental detailed">
@@ -250,8 +254,8 @@
   </article>
   */
   {
-    "id": "F66SF6q1",
-    "block": "[[[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n  \"],[10,\"h2\"],[12],[1,[30,1,[\"title\"]]],[13],[1,\"\\n  \"],[10,2],[12],[1,\"Nice find! This looks like a nice place to stay near \"],[1,[30,1,[\"city\"]]],[1,\".\"],[13],[1,\"\\n  \"],[10,3],[14,6,\"#\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"external nofollow noopener noreferrer\"],[14,0,\"share button\"],[12],[1,\"\\n    Share on Twitter\\n  \"],[13],[1,\"\\n\"]],[]]]]],[1,\"\\n\\n\"],[10,\"article\"],[14,0,\"rental detailed\"],[12],[1,\"\\n  \"],[8,[39,5],[[16,\"src\",[30,1,[\"image\"]]],[16,\"alt\",[29,[\"A picture of \",[30,1,[\"title\"]]]]]],null,null],[1,\"\\n\\n  \"],[10,0],[14,0,\"details\"],[12],[1,\"\\n    \"],[10,\"h3\"],[12],[1,\"About \"],[1,[30,1,[\"title\"]]],[13],[1,\"\\n\\n    \"],[10,0],[14,0,\"detail owner\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Owner:\"],[13],[1,\" \"],[1,[30,1,[\"owner\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail type\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Type:\"],[13],[1,\" \"],[1,[30,1,[\"type\"]]],[1,\" – \"],[1,[30,1,[\"category\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail location\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Location:\"],[13],[1,\" \"],[1,[30,1,[\"city\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail bedrooms\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Number of bedrooms:\"],[13],[1,\" \"],[1,[30,1,[\"bedrooms\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail description\"],[12],[1,\"\\n      \"],[10,2],[12],[1,[30,1,[\"description\"]]],[13],[1,\"\\n    \"],[13],[1,\"\\n  \"],[13],[1,\"\\n\\n  \"],[8,[39,9],[[16,\"alt\",[29,[\"A map of \",[30,1,[\"title\"]]]]],[24,0,\"large\"]],[[\"@lat\",\"@lng\",\"@zoom\",\"@width\",\"@height\"],[[30,1,[\"location\",\"lat\"]],[30,1,[\"location\",\"lng\"]],\"12\",\"894\",\"600\"]],null],[1,\"\\n\"],[13]],[\"@rental\"],false,[\"jumbo\",\"h2\",\"p\",\"a\",\"article\",\"rental/image\",\"div\",\"h3\",\"span\",\"map\"]]",
+    "id": "1Kry3Ey1",
+    "block": "[[[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n  \"],[10,\"h2\"],[12],[1,[30,1,[\"title\"]]],[13],[1,\"\\n  \"],[10,2],[12],[1,\"Nice find! This looks like a nice place to stay near \"],[1,[30,1,[\"city\"]]],[1,\".\"],[13],[1,\"\\n  \"],[8,[39,3],null,[[\"@text\",\"@hashtags\",\"@via\"],[[29,[\"Check out \",[30,1,[\"title\"]],\" on Super Rentals!\"]],\"vacation,travel,authentic,blessed,superrentals\",\"emberjs\"]],[[\"default\"],[[[[1,\"\\n    Share on Twitter\\n    \"]],[]]]]],[1,\"\\n\"]],[]]]]],[1,\"\\n\\n\"],[10,\"article\"],[14,0,\"rental detailed\"],[12],[1,\"\\n  \"],[8,[39,5],[[16,\"src\",[30,1,[\"image\"]]],[16,\"alt\",[29,[\"A picture of \",[30,1,[\"title\"]]]]]],null,null],[1,\"\\n\\n  \"],[10,0],[14,0,\"details\"],[12],[1,\"\\n    \"],[10,\"h3\"],[12],[1,\"About \"],[1,[30,1,[\"title\"]]],[13],[1,\"\\n\\n    \"],[10,0],[14,0,\"detail owner\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Owner:\"],[13],[1,\" \"],[1,[30,1,[\"owner\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail type\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Type:\"],[13],[1,\" \"],[1,[30,1,[\"type\"]]],[1,\" – \"],[1,[30,1,[\"category\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail location\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Location:\"],[13],[1,\" \"],[1,[30,1,[\"city\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail bedrooms\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Number of bedrooms:\"],[13],[1,\" \"],[1,[30,1,[\"bedrooms\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail description\"],[12],[1,\"\\n      \"],[10,2],[12],[1,[30,1,[\"description\"]]],[13],[1,\"\\n    \"],[13],[1,\"\\n  \"],[13],[1,\"\\n\\n  \"],[8,[39,9],[[16,\"alt\",[29,[\"A map of \",[30,1,[\"title\"]]]]],[24,0,\"large\"]],[[\"@lat\",\"@lng\",\"@zoom\",\"@width\",\"@height\"],[[30,1,[\"location\",\"lat\"]],[30,1,[\"location\",\"lng\"]],\"12\",\"894\",\"600\"]],null],[1,\"\\n\"],[13]],[\"@rental\"],false,[\"jumbo\",\"h2\",\"p\",\"share-button\",\"article\",\"rental/image\",\"div\",\"h3\",\"span\",\"map\"]]",
     "moduleName": "ember-quickstart/components/rental/detailed.hbs",
     "isStrictMode": false
   });
@@ -308,26 +312,68 @@
   }), _applyDecoratedDescriptor(_class.prototype, "toggleSize", [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, "toggleSize"), _class.prototype)), _class);
   (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, RentalImageComponent);
 });
-;define("ember-quickstart/components/share-button", ["exports", "@ember/component", "@glimmer/component", "@ember/template-factory"], function (_exports, _component, _component2, _templateFactory) {
+;define("ember-quickstart/components/share-button", ["exports", "@ember/component", "@ember/service", "@glimmer/component", "@ember/template-factory"], function (_exports, _component, _service, _component2, _templateFactory) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
     value: true
   });
   _exports.default = void 0;
-  0; //eaimeta@70e063a35619d71f0,"@glimmer/component",0,"@ember/template-factory",0,"@ember/component"eaimeta@70e063a35619d71f
+  var _class, _descriptor;
+  0; //eaimeta@70e063a35619d71f0,"@ember/service",0,"@glimmer/component",0,"@ember/template-factory",0,"@ember/component"eaimeta@70e063a35619d71f
+  function _initializerDefineProperty(e, i, r, l) { r && Object.defineProperty(e, i, { enumerable: r.enumerable, configurable: r.configurable, writable: r.writable, value: r.initializer ? r.initializer.call(l) : void 0 }); }
+  function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+  function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
+  function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+  function _applyDecoratedDescriptor(i, e, r, n, l) { var a = {}; return Object.keys(n).forEach(function (i) { a[i] = n[i]; }), a.enumerable = !!a.enumerable, a.configurable = !!a.configurable, ("value" in a || a.initializer) && (a.writable = !0), a = r.slice().reverse().reduce(function (r, n) { return n(i, e, r) || r; }, a), l && void 0 !== a.initializer && (a.value = a.initializer ? a.initializer.call(l) : void 0, a.initializer = void 0), void 0 === a.initializer && (Object.defineProperty(i, e, a), a = null), a; }
+  function _initializerWarningHelper(r, e) { throw Error("Decorating class property failed. Please ensure that transform-class-properties is enabled and runs after the decorators transform."); }
   const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
   /*
+    <a
+    ...attributes
+    href={{this.shareURL}}
+    target='_blank'
+    rel='external nofollow noopener noreferrer'
+    class='share button'
+  >
     {{yield}}
+  </a>
   */
   {
-    "id": "/7Fdfugp",
-    "block": "[[[18,1,null]],[\"&default\"],false,[\"yield\"]]",
+    "id": "HMhrqgqy",
+    "block": "[[[11,3],[17,1],[16,6,[30,0,[\"shareURL\"]]],[24,\"target\",\"_blank\"],[24,\"rel\",\"external nofollow noopener noreferrer\"],[24,0,\"share button\"],[12],[1,\"\\n  \"],[18,2,null],[1,\"\\n\"],[13]],[\"&attrs\",\"&default\"],false,[\"a\",\"yield\"]]",
     "moduleName": "ember-quickstart/components/share-button.hbs",
     "isStrictMode": false
   });
-  class ShareButtonComponent extends _component2.default {}
-  _exports.default = ShareButtonComponent;
+  const TWEET_INTENT = 'https://twitter.com/intent/tweet';
+  let ShareButtonComponent = _exports.default = (_class = class ShareButtonComponent extends _component2.default {
+    constructor(...args) {
+      super(...args);
+      _initializerDefineProperty(this, "router", _descriptor, this);
+    }
+    get currentURL() {
+      return new URL(this.router.currentURL, window.location.origin);
+    }
+    get shareURL() {
+      let url = new URL(TWEET_INTENT);
+      url.searchParams.set('url', this.currentURL);
+      if (this.args.text) {
+        url.searchParams.set('text', this.args.text);
+      }
+      if (this.args.hashtags) {
+        url.searchParams.set('hashtags', this.args.hashtags);
+      }
+      if (this.args.via) {
+        url.searchParams.set('via', this.args.via);
+      }
+      return url;
+    }
+  }, (_descriptor = _applyDecoratedDescriptor(_class.prototype, "router", [_service.service], {
+    configurable: true,
+    enumerable: true,
+    writable: true,
+    initializer: null
+  })), _class);
   (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, ShareButtonComponent);
 });
 ;define("ember-quickstart/components/welcome-page", ["exports", "ember-welcome-page/components/welcome-page"], function (_exports, _welcomePage) {
@@ -520,7 +566,7 @@
   const COMMUNITY_CATEGORIES = ['Condo', 'Townhouse', 'Apartment'];
   class IndexRoute extends _route.default {
     async model() {
-      let response = await fetch('api/rentals.json');
+      let response = await fetch('/api/rentals.json');
       let {
         data
       } = await response.json();
@@ -544,6 +590,40 @@
     }
   }
   _exports.default = IndexRoute;
+});
+;define("ember-quickstart/routes/rental", ["exports", "@ember/routing/route"], function (_exports, _route) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  0; //eaimeta@70e063a35619d71f0,"@ember/routing/route"eaimeta@70e063a35619d71f
+  const COMMUNITY_CATEGORIES = ['Condo', 'Townhouse', 'Apartment'];
+  class RentalRoute extends _route.default {
+    async model(params) {
+      let response = await fetch(`/api/rentals/${params.rental_id}.json`);
+      let {
+        data
+      } = await response.json();
+      let {
+        id,
+        attributes
+      } = data;
+      let type;
+      if (COMMUNITY_CATEGORIES.includes(attributes.category)) {
+        type = 'Community';
+      } else {
+        type = 'Standalone';
+      }
+      return {
+        id,
+        type,
+        ...attributes
+      };
+    }
+  }
+  _exports.default = RentalRoute;
 });
 ;define("ember-quickstart/services/page-title", ["exports", "ember-page-title/services/page-title"], function (_exports, _pageTitle) {
   "use strict";
@@ -835,7 +915,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+c8972759"});
+            require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+d119580f"});
           }
         
 //# sourceMappingURL=ember-quickstart.map
