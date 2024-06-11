@@ -2,6 +2,28 @@
 
 
 
+;define("ember-quickstart/adapters/application", ["exports", "@ember-data/adapter/json-api"], function (_exports, _jsonApi) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  0; //eaimeta@70e063a35619d71f0,"@ember-data/adapter/json-api"eaimeta@70e063a35619d71f
+  function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+  function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
+  function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+  class ApplicationAdaprter extends _jsonApi.default {
+    constructor(...args) {
+      super(...args);
+      _defineProperty(this, "namespace", 'api');
+    }
+    buildURL(...args) {
+      return `${super.buildURL(...args)}.json`;
+    }
+  }
+  _exports.default = ApplicationAdaprter;
+});
 ;define("ember-quickstart/app", ["exports", "@ember/application", "ember-resolver", "ember-load-initializers", "ember-quickstart/config/environment"], function (_exports, _application, _emberResolver, _emberLoadInitializers, _environment) {
   "use strict";
 
@@ -632,75 +654,76 @@
     });
   });
 });
-;define("ember-quickstart/routes/index", ["exports", "@ember/routing/route"], function (_exports, _route) {
+;define("ember-quickstart/routes/index", ["exports", "@ember/routing/route", "@ember/service"], function (_exports, _route, _service) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
     value: true
   });
   _exports.default = void 0;
-  0; //eaimeta@70e063a35619d71f0,"@ember/routing/route"eaimeta@70e063a35619d71f
-  const COMMUNITY_CATEGORIES = ['Condo', 'Townhouse', 'Apartment'];
-  class IndexRoute extends _route.default {
+  var _class, _descriptor;
+  0; //eaimeta@70e063a35619d71f0,"@ember/routing/route",0,"@ember/service"eaimeta@70e063a35619d71f
+  function _initializerDefineProperty(e, i, r, l) { r && Object.defineProperty(e, i, { enumerable: r.enumerable, configurable: r.configurable, writable: r.writable, value: r.initializer ? r.initializer.call(l) : void 0 }); }
+  function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+  function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
+  function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+  function _applyDecoratedDescriptor(i, e, r, n, l) { var a = {}; return Object.keys(n).forEach(function (i) { a[i] = n[i]; }), a.enumerable = !!a.enumerable, a.configurable = !!a.configurable, ("value" in a || a.initializer) && (a.writable = !0), a = r.slice().reverse().reduce(function (r, n) { return n(i, e, r) || r; }, a), l && void 0 !== a.initializer && (a.value = a.initializer ? a.initializer.call(l) : void 0, a.initializer = void 0), void 0 === a.initializer && (Object.defineProperty(i, e, a), a = null), a; }
+  function _initializerWarningHelper(r, e) { throw Error("Decorating class property failed. Please ensure that transform-class-properties is enabled and runs after the decorators transform."); }
+  let IndexRoute = _exports.default = (_class = class IndexRoute extends _route.default {
+    constructor(...args) {
+      super(...args);
+      _initializerDefineProperty(this, "store", _descriptor, this);
+    }
     async model() {
-      let response = await fetch('/api/rentals.json');
-      let {
-        data
-      } = await response.json();
-      return data.map(model => {
-        let {
-          id,
-          attributes
-        } = model;
-        let type;
-        if (COMMUNITY_CATEGORIES.includes(attributes.category)) {
-          type = 'Community';
-        } else {
-          type = 'Standalone';
-        }
-        return {
-          id,
-          type,
-          ...attributes
-        };
-      });
+      return this.store.findAll('rental');
     }
-  }
-  _exports.default = IndexRoute;
+  }, (_descriptor = _applyDecoratedDescriptor(_class.prototype, "store", [_service.service], {
+    configurable: true,
+    enumerable: true,
+    writable: true,
+    initializer: null
+  })), _class);
 });
-;define("ember-quickstart/routes/rental", ["exports", "@ember/routing/route"], function (_exports, _route) {
+;define("ember-quickstart/routes/rental", ["exports", "@ember/routing/route", "@ember/service"], function (_exports, _route, _service) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
     value: true
   });
   _exports.default = void 0;
-  0; //eaimeta@70e063a35619d71f0,"@ember/routing/route"eaimeta@70e063a35619d71f
-  const COMMUNITY_CATEGORIES = ['Condo', 'Townhouse', 'Apartment'];
-  class RentalRoute extends _route.default {
-    async model(params) {
-      let response = await fetch(`/api/rentals/${params.rental_id}.json`);
-      let {
-        data
-      } = await response.json();
-      let {
-        id,
-        attributes
-      } = data;
-      let type;
-      if (COMMUNITY_CATEGORIES.includes(attributes.category)) {
-        type = 'Community';
-      } else {
-        type = 'Standalone';
-      }
-      return {
-        id,
-        type,
-        ...attributes
-      };
+  var _class, _descriptor;
+  0; //eaimeta@70e063a35619d71f0,"@ember/routing/route",0,"@ember/service"eaimeta@70e063a35619d71f
+  function _initializerDefineProperty(e, i, r, l) { r && Object.defineProperty(e, i, { enumerable: r.enumerable, configurable: r.configurable, writable: r.writable, value: r.initializer ? r.initializer.call(l) : void 0 }); }
+  function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+  function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
+  function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+  function _applyDecoratedDescriptor(i, e, r, n, l) { var a = {}; return Object.keys(n).forEach(function (i) { a[i] = n[i]; }), a.enumerable = !!a.enumerable, a.configurable = !!a.configurable, ("value" in a || a.initializer) && (a.writable = !0), a = r.slice().reverse().reduce(function (r, n) { return n(i, e, r) || r; }, a), l && void 0 !== a.initializer && (a.value = a.initializer ? a.initializer.call(l) : void 0, a.initializer = void 0), void 0 === a.initializer && (Object.defineProperty(i, e, a), a = null), a; }
+  function _initializerWarningHelper(r, e) { throw Error("Decorating class property failed. Please ensure that transform-class-properties is enabled and runs after the decorators transform."); }
+  let RentalRoute = _exports.default = (_class = class RentalRoute extends _route.default {
+    constructor(...args) {
+      super(...args);
+      _initializerDefineProperty(this, "store", _descriptor, this);
     }
-  }
-  _exports.default = RentalRoute;
+    async model(params) {
+      return this.store.findRecord('rental', params.rental_id);
+    }
+  }, (_descriptor = _applyDecoratedDescriptor(_class.prototype, "store", [_service.service], {
+    configurable: true,
+    enumerable: true,
+    writable: true,
+    initializer: null
+  })), _class);
+});
+;define("ember-quickstart/serializers/application", ["exports", "@ember-data/serializer/json-api"], function (_exports, _jsonApi) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  0; //eaimeta@70e063a35619d71f0,"@ember-data/serializer/json-api"eaimeta@70e063a35619d71f
+  class ApplicationSerializer extends _jsonApi.default {}
+  _exports.default = ApplicationSerializer;
 });
 ;define("ember-quickstart/services/page-title", ["exports", "ember-page-title/services/page-title"], function (_exports, _pageTitle) {
   "use strict";
@@ -992,7 +1015,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+d119580f"});
+            require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+896b24da"});
           }
         
 //# sourceMappingURL=ember-quickstart.map
