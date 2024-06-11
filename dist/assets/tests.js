@@ -22,6 +22,22 @@ define("ember-quickstart/tests/acceptance/ember-app-test", ["qunit", "@ember/tes
       await (0, _testHelpers.click)('.jumbo a.button');
       assert.strictEqual((0, _testHelpers.currentURL)(), '/about');
     });
+    (0, _qunit.test)('viewing the details of a rental property', async function (assert) {
+      await (0, _testHelpers.visit)('/');
+      assert.dom('.rental').exists({
+        count: 3
+      });
+      await (0, _testHelpers.click)('.rental:first-of-type a');
+      assert.strictEqual((0, _testHelpers.currentURL)(), '/rentals/grand-old-mansion');
+    });
+    (0, _qunit.test)('visiting /rentals/grand-old-mansion', async function (assert) {
+      await (0, _testHelpers.visit)('/rentals/grand-old-mansion');
+      assert.strictEqual((0, _testHelpers.currentURL)(), '/rentals/grand-old-mansion');
+      assert.dom('nav').exists();
+      assert.dom('h1').containsText('SuperRentals');
+      assert.dom('h2').containsText('Grand Old Mansion');
+      assert.dom('.rental.detailed').exists();
+    });
     (0, _qunit.test)('visiting /about', async function (assert) {
       await (0, _testHelpers.visit)('/about');
       assert.strictEqual((0, _testHelpers.currentURL)(), '/about');
@@ -294,6 +310,69 @@ define("ember-quickstart/tests/integration/components/rental-test", ["qunit", "e
     });
   });
 });
+define("ember-quickstart/tests/integration/components/rental/detailed-test", ["qunit", "ember-quickstart/tests/helpers", "@ember/test-helpers", "@ember/template-factory"], function (_qunit, _helpers, _testHelpers, _templateFactory) {
+  "use strict";
+
+  0; //eaimeta@70e063a35619d71f0,"qunit",0,"ember-quickstart/tests/helpers",0,"@ember/test-helpers",0,"@ember/template-factory"eaimeta@70e063a35619d71f
+  (0, _qunit.module)('Integration | Component | rental/detailed', function (hooks) {
+    (0, _helpers.setupRenderingTest)(hooks);
+    hooks.beforeEach(function () {
+      this.setProperties({
+        rental: {
+          id: 'grand-old-mansion',
+          title: 'Grand Old Mansion',
+          owner: 'Veruca Salt',
+          city: 'San Francisco',
+          location: {
+            lat: 37.7749,
+            lng: -122.4194
+          },
+          category: 'Estate',
+          type: 'Standalone',
+          bedrooms: 15,
+          image: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg',
+          description: 'This grand old mansion sits on over 100 acres of rolling hills and dense redwood forests.'
+        }
+      });
+    });
+    (0, _qunit.test)('it renders a header with a share button', async function (assert) {
+      await (0, _testHelpers.render)((0, _templateFactory.createTemplateFactory)(
+      /*
+        <Rental::Detailed @rental={{this.rental}} />
+      */
+      {
+        "id": "AjslWeqS",
+        "block": "[[[8,[39,0],null,[[\"@rental\"],[[30,0,[\"rental\"]]]],null]],[],false,[\"rental/detailed\"]]",
+        "moduleName": "/Users/lizethvera/Code/ember-app/ember-quickstart/tests/integration/components/rental/detailed-test.js",
+        "isStrictMode": false
+      }));
+      assert.dom('.jumbo').exists();
+      assert.dom('.jumbo h2').containsText('Grand Old Mansion');
+      assert.dom('.jumbo p').containsText('a nice place to stay near San Francisco');
+      assert.dom('.jumbo a.button').containsText('Share on Twitter');
+    });
+    (0, _qunit.test)('it renders detailed information about a rental property', async function (assert) {
+      await (0, _testHelpers.render)((0, _templateFactory.createTemplateFactory)(
+      /*
+        <Rental::Detailed @rental={{this.rental}} />
+      */
+      {
+        "id": "AjslWeqS",
+        "block": "[[[8,[39,0],null,[[\"@rental\"],[[30,0,[\"rental\"]]]],null]],[],false,[\"rental/detailed\"]]",
+        "moduleName": "/Users/lizethvera/Code/ember-app/ember-quickstart/tests/integration/components/rental/detailed-test.js",
+        "isStrictMode": false
+      }));
+      assert.dom('article').hasClass('rental');
+      assert.dom('article h3').containsText('About Grand Old Mansion');
+      assert.dom('article .detail.owner').containsText('Veruca Salt');
+      assert.dom('article .detail.type').containsText('Standalone – Estate');
+      assert.dom('article .detail.location').containsText('San Francisco');
+      assert.dom('article .detail.bedrooms').containsText('15');
+      assert.dom('article .image').exists();
+      assert.dom('article .map').exists();
+    });
+  });
+});
 define("ember-quickstart/tests/integration/components/rental/image-test", ["qunit", "ember-quickstart/tests/helpers", "@ember/test-helpers", "@ember/template-factory"], function (_qunit, _helpers, _testHelpers, _templateFactory) {
   "use strict";
 
@@ -344,6 +423,47 @@ define("ember-quickstart/tests/integration/components/rental/image-test", ["quni
       await (0, _testHelpers.click)('button.image');
       assert.dom('.image').doesNotHaveClass('large');
       assert.dom('.image small').hasText('View Larger');
+    });
+  });
+});
+define("ember-quickstart/tests/integration/components/share-button-test", ["qunit", "ember-quickstart/tests/helpers", "@ember/test-helpers", "@ember/template-factory"], function (_qunit, _helpers, _testHelpers, _templateFactory) {
+  "use strict";
+
+  0; //eaimeta@70e063a35619d71f0,"qunit",0,"ember-quickstart/tests/helpers",0,"@ember/test-helpers",0,"@ember/template-factory"eaimeta@70e063a35619d71f
+  (0, _qunit.module)('Integration | Component | share-button', function (hooks) {
+    (0, _helpers.setupRenderingTest)(hooks);
+    (0, _qunit.test)('it renders', async function (assert) {
+      // Set any properties with this.set('myProperty', 'value');
+      // Handle any actions with this.set('myAction', function(val) { ... });
+
+      await (0, _testHelpers.render)((0, _templateFactory.createTemplateFactory)(
+      /*
+        <ShareButton />
+      */
+      {
+        "id": "gOEnnLXL",
+        "block": "[[[8,[39,0],null,null,null]],[],false,[\"share-button\"]]",
+        "moduleName": "/Users/lizethvera/Code/ember-app/ember-quickstart/tests/integration/components/share-button-test.js",
+        "isStrictMode": false
+      }));
+      assert.dom().hasText('');
+
+      // Template block usage:
+      await (0, _testHelpers.render)((0, _templateFactory.createTemplateFactory)(
+      /*
+        
+            <ShareButton>
+              template block text
+            </ShareButton>
+          
+      */
+      {
+        "id": "KTW2FOmp",
+        "block": "[[[1,\"\\n      \"],[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n        template block text\\n      \"]],[]]]]],[1,\"\\n    \"]],[],false,[\"share-button\"]]",
+        "moduleName": "/Users/lizethvera/Code/ember-app/ember-quickstart/tests/integration/components/share-button-test.js",
+        "isStrictMode": false
+      }));
+      assert.dom().hasText('template block text');
     });
   });
 });

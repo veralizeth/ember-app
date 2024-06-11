@@ -71,7 +71,7 @@
   0; //eaimeta@70e063a35619d71f0,"@glimmer/component",0,"ember-quickstart/config/environment",0,"@ember/template-factory",0,"@ember/component"eaimeta@70e063a35619d71f
   const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
   /*
-    {{yield}}
+    {{!-- {{yield}} --}}
   <div class='map'>
     <img
       alt='Map image at coordinates {{@lat}},{{@lng}}'
@@ -83,8 +83,8 @@
   </div>
   */
   {
-    "id": "rU/0dbwR",
-    "block": "[[[18,6,null],[1,\"\\n\"],[10,0],[14,0,\"map\"],[12],[1,\"\\n  \"],[11,\"img\"],[16,\"alt\",[29,[\"Map image at coordinates \",[30,1],\",\",[30,2]]]],[17,3],[16,\"src\",[30,0,[\"src\"]]],[16,\"width\",[30,4]],[16,\"height\",[30,5]],[12],[13],[1,\"\\n\"],[13]],[\"@lat\",\"@lng\",\"&attrs\",\"@width\",\"@height\",\"&default\"],false,[\"yield\",\"div\",\"img\"]]",
+    "id": "Ffn+B6MS",
+    "block": "[[[10,0],[14,0,\"map\"],[12],[1,\"\\n  \"],[11,\"img\"],[16,\"alt\",[29,[\"Map image at coordinates \",[30,1],\",\",[30,2]]]],[17,3],[16,\"src\",[30,0,[\"src\"]]],[16,\"width\",[30,4]],[16,\"height\",[30,5]],[12],[13],[1,\"\\n\"],[13]],[\"@lat\",\"@lng\",\"&attrs\",\"@width\",\"@height\"],false,[\"div\",\"img\"]]",
     "moduleName": "ember-quickstart/components/map.hbs",
     "isStrictMode": false
   });
@@ -152,49 +152,107 @@
   0; //eaimeta@70e063a35619d71f0,"@ember/component/template-only",0,"@ember/template-factory",0,"@ember/component"eaimeta@70e063a35619d71f
   const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
   /*
-    {{yield}}
-  <article class='rental'>
+    <article class="rental">
     <Rental::Image
       src={{@rental.image}}
-      alt={{@rental.title}}
+      alt="A picture of {{@rental.title}}"
     />
-    <div class='details'>
+    <div class="details">
       <h3>
         <LinkTo @route="rental" @model={{@rental}}>
           {{@rental.title}}
         </LinkTo>
       </h3>
-      <div class='detail owner'>
-        <span>Owner:</span>
-        {{@rental.owner}}
+      <div class="detail owner">
+        <span>Owner:</span> {{@rental.owner}}
       </div>
-      <div class='detail type'>
-        <span>Type:</span>
-        {{@rental.type}}
+      <div class="detail type">
+        <span>Type:</span> {{@rental.type}}
       </div>
-      <div class='detail location'>
-        <span>Location:</span>
-        {{@rental.city}}
+      <div class="detail location">
+        <span>Location:</span> {{@rental.city}}
       </div>
-      <div class='detail bedrooms'>
-        <span>Number of bedrooms:</span>
-        {{@rental.bedrooms}}
+      <div class="detail bedrooms">
+        <span>Number of bedrooms:</span> {{@rental.bedrooms}}
       </div>
     </div>
     <Map
-      @lat='37.7749'
-      @lng='-122.4194'
-      @zoom='9'
-      @width='150'
-      @height='150'
-      alt='A map of Grand Old Mansion'
+      @lat={{@rental.location.lat}}
+      @lng={{@rental.location.lng}}
+      @zoom="9"
+      @width="150"
+      @height="150"
+      alt="A map of {{@rental.title}}"
     />
   </article>
   */
   {
-    "id": "0z5FQCce",
-    "block": "[[[18,2,null],[1,\"\\n\"],[10,\"article\"],[14,0,\"rental\"],[12],[1,\"\\n  \"],[8,[39,2],[[16,\"src\",[30,1,[\"image\"]]],[16,\"alt\",[30,1,[\"title\"]]]],null,null],[1,\"\\n  \"],[10,0],[14,0,\"details\"],[12],[1,\"\\n    \"],[10,\"h3\"],[12],[1,\"\\n      \"],[8,[39,5],null,[[\"@route\",\"@model\"],[\"rental\",[30,1]]],[[\"default\"],[[[[1,\"\\n        \"],[1,[30,1,[\"title\"]]],[1,\"\\n      \"]],[]]]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail owner\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Owner:\"],[13],[1,\"\\n      \"],[1,[30,1,[\"owner\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail type\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Type:\"],[13],[1,\"\\n      \"],[1,[30,1,[\"type\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail location\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Location:\"],[13],[1,\"\\n      \"],[1,[30,1,[\"city\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail bedrooms\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Number of bedrooms:\"],[13],[1,\"\\n      \"],[1,[30,1,[\"bedrooms\"]]],[1,\"\\n    \"],[13],[1,\"\\n  \"],[13],[1,\"\\n  \"],[8,[39,7],[[24,\"alt\",\"A map of Grand Old Mansion\"]],[[\"@lat\",\"@lng\",\"@zoom\",\"@width\",\"@height\"],[\"37.7749\",\"-122.4194\",\"9\",\"150\",\"150\"]],null],[1,\"\\n\"],[13]],[\"@rental\",\"&default\"],false,[\"yield\",\"article\",\"rental/image\",\"div\",\"h3\",\"link-to\",\"span\",\"map\"]]",
+    "id": "rZ9ExcV0",
+    "block": "[[[10,\"article\"],[14,0,\"rental\"],[12],[1,\"\\n  \"],[8,[39,1],[[16,\"src\",[30,1,[\"image\"]]],[16,\"alt\",[29,[\"A picture of \",[30,1,[\"title\"]]]]]],null,null],[1,\"\\n  \"],[10,0],[14,0,\"details\"],[12],[1,\"\\n    \"],[10,\"h3\"],[12],[1,\"\\n      \"],[8,[39,4],null,[[\"@route\",\"@model\"],[\"rental\",[30,1]]],[[\"default\"],[[[[1,\"\\n        \"],[1,[30,1,[\"title\"]]],[1,\"\\n      \"]],[]]]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail owner\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Owner:\"],[13],[1,\" \"],[1,[30,1,[\"owner\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail type\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Type:\"],[13],[1,\" \"],[1,[30,1,[\"type\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail location\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Location:\"],[13],[1,\" \"],[1,[30,1,[\"city\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail bedrooms\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Number of bedrooms:\"],[13],[1,\" \"],[1,[30,1,[\"bedrooms\"]]],[1,\"\\n    \"],[13],[1,\"\\n  \"],[13],[1,\"\\n  \"],[8,[39,6],[[16,\"alt\",[29,[\"A map of \",[30,1,[\"title\"]]]]]],[[\"@lat\",\"@lng\",\"@zoom\",\"@width\",\"@height\"],[[30,1,[\"location\",\"lat\"]],[30,1,[\"location\",\"lng\"]],\"9\",\"150\",\"150\"]],null],[1,\"\\n\"],[13]],[\"@rental\"],false,[\"article\",\"rental/image\",\"div\",\"h3\",\"link-to\",\"span\",\"map\"]]",
     "moduleName": "ember-quickstart/components/rental.hbs",
+    "isStrictMode": false
+  });
+  var _default = _exports.default = (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, (0, _templateOnly.default)());
+});
+;define("ember-quickstart/components/rental/detailed", ["exports", "@ember/component", "@ember/component/template-only", "@ember/template-factory"], function (_exports, _component, _templateOnly, _templateFactory) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  0; //eaimeta@70e063a35619d71f0,"@ember/component/template-only",0,"@ember/template-factory",0,"@ember/component"eaimeta@70e063a35619d71f
+  const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
+  /*
+    <Jumbo>
+    <h2>{{@rental.title}}</h2>
+    <p>Nice find! This looks like a nice place to stay near {{@rental.city}}.</p>
+    <a href="#" target="_blank" rel="external nofollow noopener noreferrer" class="share button">
+      Share on Twitter
+    </a>
+  </Jumbo>
+  
+  <article class="rental detailed">
+    <Rental::Image
+      src={{@rental.image}}
+      alt="A picture of {{@rental.title}}"
+    />
+  
+    <div class="details">
+      <h3>About {{@rental.title}}</h3>
+  
+      <div class="detail owner">
+        <span>Owner:</span> {{@rental.owner}}
+      </div>
+      <div class="detail type">
+        <span>Type:</span> {{@rental.type}} – {{@rental.category}}
+      </div>
+      <div class="detail location">
+        <span>Location:</span> {{@rental.city}}
+      </div>
+      <div class="detail bedrooms">
+        <span>Number of bedrooms:</span> {{@rental.bedrooms}}
+      </div>
+      <div class="detail description">
+        <p>{{@rental.description}}</p>
+      </div>
+    </div>
+  
+    <Map
+      @lat={{@rental.location.lat}}
+      @lng={{@rental.location.lng}}
+      @zoom="12"
+      @width="894"
+      @height="600"
+      alt="A map of {{@rental.title}}"
+      class="large"
+    />
+  </article>
+  */
+  {
+    "id": "F66SF6q1",
+    "block": "[[[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n  \"],[10,\"h2\"],[12],[1,[30,1,[\"title\"]]],[13],[1,\"\\n  \"],[10,2],[12],[1,\"Nice find! This looks like a nice place to stay near \"],[1,[30,1,[\"city\"]]],[1,\".\"],[13],[1,\"\\n  \"],[10,3],[14,6,\"#\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"external nofollow noopener noreferrer\"],[14,0,\"share button\"],[12],[1,\"\\n    Share on Twitter\\n  \"],[13],[1,\"\\n\"]],[]]]]],[1,\"\\n\\n\"],[10,\"article\"],[14,0,\"rental detailed\"],[12],[1,\"\\n  \"],[8,[39,5],[[16,\"src\",[30,1,[\"image\"]]],[16,\"alt\",[29,[\"A picture of \",[30,1,[\"title\"]]]]]],null,null],[1,\"\\n\\n  \"],[10,0],[14,0,\"details\"],[12],[1,\"\\n    \"],[10,\"h3\"],[12],[1,\"About \"],[1,[30,1,[\"title\"]]],[13],[1,\"\\n\\n    \"],[10,0],[14,0,\"detail owner\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Owner:\"],[13],[1,\" \"],[1,[30,1,[\"owner\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail type\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Type:\"],[13],[1,\" \"],[1,[30,1,[\"type\"]]],[1,\" – \"],[1,[30,1,[\"category\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail location\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Location:\"],[13],[1,\" \"],[1,[30,1,[\"city\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail bedrooms\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Number of bedrooms:\"],[13],[1,\" \"],[1,[30,1,[\"bedrooms\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail description\"],[12],[1,\"\\n      \"],[10,2],[12],[1,[30,1,[\"description\"]]],[13],[1,\"\\n    \"],[13],[1,\"\\n  \"],[13],[1,\"\\n\\n  \"],[8,[39,9],[[16,\"alt\",[29,[\"A map of \",[30,1,[\"title\"]]]]],[24,0,\"large\"]],[[\"@lat\",\"@lng\",\"@zoom\",\"@width\",\"@height\"],[[30,1,[\"location\",\"lat\"]],[30,1,[\"location\",\"lng\"]],\"12\",\"894\",\"600\"]],null],[1,\"\\n\"],[13]],[\"@rental\"],false,[\"jumbo\",\"h2\",\"p\",\"a\",\"article\",\"rental/image\",\"div\",\"h3\",\"span\",\"map\"]]",
+    "moduleName": "ember-quickstart/components/rental/detailed.hbs",
     "isStrictMode": false
   });
   var _default = _exports.default = (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, (0, _templateOnly.default)());
@@ -249,6 +307,28 @@
     }
   }), _applyDecoratedDescriptor(_class.prototype, "toggleSize", [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, "toggleSize"), _class.prototype)), _class);
   (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, RentalImageComponent);
+});
+;define("ember-quickstart/components/share-button", ["exports", "@ember/component", "@glimmer/component", "@ember/template-factory"], function (_exports, _component, _component2, _templateFactory) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  0; //eaimeta@70e063a35619d71f0,"@glimmer/component",0,"@ember/template-factory",0,"@ember/component"eaimeta@70e063a35619d71f
+  const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
+  /*
+    {{yield}}
+  */
+  {
+    "id": "/7Fdfugp",
+    "block": "[[[18,1,null]],[\"&default\"],false,[\"yield\"]]",
+    "moduleName": "ember-quickstart/components/share-button.hbs",
+    "isStrictMode": false
+  });
+  class ShareButtonComponent extends _component2.default {}
+  _exports.default = ShareButtonComponent;
+  (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, ShareButtonComponent);
 });
 ;define("ember-quickstart/components/welcome-page", ["exports", "ember-welcome-page/components/welcome-page"], function (_exports, _welcomePage) {
   "use strict";
@@ -419,7 +499,6 @@
     }
   }
   _exports.default = Router;
-  Router.map(function () {});
   Router.map(function () {
     this.route('about');
     this.route('contact', {
@@ -514,18 +593,19 @@
   var _default = _exports.default = (0, _templateFactory.createTemplateFactory)(
   /*
     <Jumbo>
-          <h2>
-              About Super Rentals!
-          </h2>
-          <p>    The Super Rentals website is a delightful project created to explore Ember.
+    <h2>
+      About Super Rentals!
+    </h2>
+    <p>
+      The Super Rentals website is a delightful project created to explore Ember.
       By building a property rental site, we can simultaneously imagine traveling
       AND building Ember applications.</p>
-      <LinkTo @route="contact" class="button">Contact Us</LinkTo>
+    <LinkTo @route='contact' class='button'>Contact Us</LinkTo>
   </Jumbo>
   */
   {
-    "id": "O3CaDBED",
-    "block": "[[[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n        \"],[10,\"h2\"],[12],[1,\"\\n            About Super Rentals!\\n        \"],[13],[1,\"\\n        \"],[10,2],[12],[1,\"    The Super Rentals website is a delightful project created to explore Ember.\\n    By building a property rental site, we can simultaneously imagine traveling\\n    AND building Ember applications.\"],[13],[1,\"\\n    \"],[8,[39,3],[[24,0,\"button\"]],[[\"@route\"],[\"contact\"]],[[\"default\"],[[[[1,\"Contact Us\"]],[]]]]],[1,\"\\n\"]],[]]]]]],[],false,[\"jumbo\",\"h2\",\"p\",\"link-to\"]]",
+    "id": "YW5W5nRg",
+    "block": "[[[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n  \"],[10,\"h2\"],[12],[1,\"\\n    About Super Rentals!\\n  \"],[13],[1,\"\\n  \"],[10,2],[12],[1,\"\\n    The Super Rentals website is a delightful project created to explore Ember.\\n    By building a property rental site, we can simultaneously imagine traveling\\n    AND building Ember applications.\"],[13],[1,\"\\n  \"],[8,[39,3],[[24,0,\"button\"]],[[\"@route\"],[\"contact\"]],[[\"default\"],[[[[1,\"Contact Us\"]],[]]]]],[1,\"\\n\"]],[]]]]]],[],false,[\"jumbo\",\"h2\",\"p\",\"link-to\"]]",
     "moduleName": "ember-quickstart/templates/about.hbs",
     "isStrictMode": false
   });
@@ -618,6 +698,25 @@
     "id": "LhPl90e/",
     "block": "[[[8,[39,0],null,null,[[\"default\"],[[[[1,\"\\n  \"],[10,\"h2\"],[12],[1,\"Welcome to Super Rentals!\"],[13],[1,\"\\n  \"],[10,2],[12],[1,\"We hope you find exactly what you're looking for in a place to stay.\"],[13],[1,\"\\n  \"],[8,[39,3],[[24,0,\"button\"]],[[\"@route\"],[\"about\"]],[[\"default\"],[[[[1,\"About Us\"]],[]]]]],[1,\"\\n\"]],[]]]]],[1,\"\\n\\n\"],[10,0],[14,0,\"rentals\"],[12],[1,\"\\n  \"],[10,\"ul\"],[14,0,\"results\"],[12],[1,\"\\n\"],[42,[28,[37,7],[[28,[37,7],[[30,1]],null]],null],null,[[[1,\"      \"],[10,\"li\"],[12],[8,[39,9],null,[[\"@rental\"],[[30,2]]],null],[13],[1,\"\\n\"]],[2]],null],[1,\"  \"],[13],[1,\"\\n\"],[13]],[\"@model\",\"rental\"],false,[\"jumbo\",\"h2\",\"p\",\"link-to\",\"div\",\"ul\",\"each\",\"-track-array\",\"li\",\"rental\"]]",
     "moduleName": "ember-quickstart/templates/index.hbs",
+    "isStrictMode": false
+  });
+});
+;define("ember-quickstart/templates/rental", ["exports", "@ember/template-factory"], function (_exports, _templateFactory) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  0; //eaimeta@70e063a35619d71f0,"@ember/template-factory"eaimeta@70e063a35619d71f
+  var _default = _exports.default = (0, _templateFactory.createTemplateFactory)(
+  /*
+    <Rental::Detailed @rental={{@model}} />
+  */
+  {
+    "id": "XZyGHT3z",
+    "block": "[[[8,[39,0],null,[[\"@rental\"],[[30,1]]],null]],[\"@model\"],false,[\"rental/detailed\"]]",
+    "moduleName": "ember-quickstart/templates/rental.hbs",
     "isStrictMode": false
   });
 });
