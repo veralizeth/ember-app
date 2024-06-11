@@ -159,7 +159,11 @@
       alt={{@rental.title}}
     />
     <div class='details'>
-      <h3>{{@rental.title}}</h3>
+      <h3>
+        <LinkTo @route="rental" @model={{@rental}}>
+          {{@rental.title}}
+        </LinkTo>
+      </h3>
       <div class='detail owner'>
         <span>Owner:</span>
         {{@rental.owner}}
@@ -188,8 +192,8 @@
   </article>
   */
   {
-    "id": "TVBzp9no",
-    "block": "[[[18,2,null],[1,\"\\n\"],[10,\"article\"],[14,0,\"rental\"],[12],[1,\"\\n  \"],[8,[39,2],[[16,\"src\",[30,1,[\"image\"]]],[16,\"alt\",[30,1,[\"title\"]]]],null,null],[1,\"\\n  \"],[10,0],[14,0,\"details\"],[12],[1,\"\\n    \"],[10,\"h3\"],[12],[1,[30,1,[\"title\"]]],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail owner\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Owner:\"],[13],[1,\"\\n      \"],[1,[30,1,[\"owner\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail type\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Type:\"],[13],[1,\"\\n      \"],[1,[30,1,[\"type\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail location\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Location:\"],[13],[1,\"\\n      \"],[1,[30,1,[\"city\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail bedrooms\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Number of bedrooms:\"],[13],[1,\"\\n      \"],[1,[30,1,[\"bedrooms\"]]],[1,\"\\n    \"],[13],[1,\"\\n  \"],[13],[1,\"\\n  \"],[8,[39,6],[[24,\"alt\",\"A map of Grand Old Mansion\"]],[[\"@lat\",\"@lng\",\"@zoom\",\"@width\",\"@height\"],[\"37.7749\",\"-122.4194\",\"9\",\"150\",\"150\"]],null],[1,\"\\n\"],[13]],[\"@rental\",\"&default\"],false,[\"yield\",\"article\",\"rental/image\",\"div\",\"h3\",\"span\",\"map\"]]",
+    "id": "0z5FQCce",
+    "block": "[[[18,2,null],[1,\"\\n\"],[10,\"article\"],[14,0,\"rental\"],[12],[1,\"\\n  \"],[8,[39,2],[[16,\"src\",[30,1,[\"image\"]]],[16,\"alt\",[30,1,[\"title\"]]]],null,null],[1,\"\\n  \"],[10,0],[14,0,\"details\"],[12],[1,\"\\n    \"],[10,\"h3\"],[12],[1,\"\\n      \"],[8,[39,5],null,[[\"@route\",\"@model\"],[\"rental\",[30,1]]],[[\"default\"],[[[[1,\"\\n        \"],[1,[30,1,[\"title\"]]],[1,\"\\n      \"]],[]]]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail owner\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Owner:\"],[13],[1,\"\\n      \"],[1,[30,1,[\"owner\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail type\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Type:\"],[13],[1,\"\\n      \"],[1,[30,1,[\"type\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail location\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Location:\"],[13],[1,\"\\n      \"],[1,[30,1,[\"city\"]]],[1,\"\\n    \"],[13],[1,\"\\n    \"],[10,0],[14,0,\"detail bedrooms\"],[12],[1,\"\\n      \"],[10,1],[12],[1,\"Number of bedrooms:\"],[13],[1,\"\\n      \"],[1,[30,1,[\"bedrooms\"]]],[1,\"\\n    \"],[13],[1,\"\\n  \"],[13],[1,\"\\n  \"],[8,[39,7],[[24,\"alt\",\"A map of Grand Old Mansion\"]],[[\"@lat\",\"@lng\",\"@zoom\",\"@width\",\"@height\"],[\"37.7749\",\"-122.4194\",\"9\",\"150\",\"150\"]],null],[1,\"\\n\"],[13]],[\"@rental\",\"&default\"],false,[\"yield\",\"article\",\"rental/image\",\"div\",\"h3\",\"link-to\",\"span\",\"map\"]]",
     "moduleName": "ember-quickstart/components/rental.hbs",
     "isStrictMode": false
   });
@@ -418,8 +422,11 @@
   Router.map(function () {});
   Router.map(function () {
     this.route('about');
-    this.route("contact", {
+    this.route('contact', {
       path: '/getting-in-touch'
+    });
+    this.route('rental', {
+      path: '/rentals/:rental_id'
     });
   });
 });
@@ -440,6 +447,7 @@
       } = await response.json();
       return data.map(model => {
         let {
+          id,
           attributes
         } = model;
         let type;
@@ -449,6 +457,7 @@
           type = 'Standalone';
         }
         return {
+          id,
           type,
           ...attributes
         };
@@ -727,7 +736,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+ae866e5c"});
+            require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+c8972759"});
           }
         
 //# sourceMappingURL=ember-quickstart.map

@@ -98,28 +98,6 @@ module.exports = require("@ember/template-factory");
 
 /***/ }),
 
-/***/ "@ember/test-helpers":
-/*!**************************************!*\
-  !*** external "@ember/test-helpers" ***!
-  \**************************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("@ember/test-helpers");
-
-/***/ }),
-
-/***/ "@ember/test/adapter":
-/*!**************************************!*\
-  !*** external "@ember/test/adapter" ***!
-  \**************************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("@ember/test/adapter");
-
-/***/ }),
-
 /***/ "@ember/utils":
 /*!*******************************!*\
   !*** external "@ember/utils" ***!
@@ -153,55 +131,23 @@ module.exports = require("@glimmer/component");
 
 /***/ }),
 
-/***/ "ember":
-/*!************************!*\
-  !*** external "ember" ***!
-  \************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("ember");
-
-/***/ }),
-
-/***/ "ember-cli-test-loader/test-support/index":
-/*!***********************************************************!*\
-  !*** external "ember-cli-test-loader/test-support/index" ***!
-  \***********************************************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("ember-cli-test-loader/test-support/index");
-
-/***/ }),
-
-/***/ "../../../../private/var/folders/6m/r1lm1nsd34zc_h3453q5h4_h0000gn/T/broccoli-33823UHlAVh9nQAdb/cache-229-webpack_bundler_ember_auto_import_webpack/app.cjs":
+/***/ "../../../../private/var/folders/6m/r1lm1nsd34zc_h3453q5h4_h0000gn/T/broccoli-36671WDcm92b0zA6T/cache-229-webpack_bundler_ember_auto_import_webpack/app.cjs":
 /*!******************************************************************************************************************************************************************!*\
-  !*** ../../../../private/var/folders/6m/r1lm1nsd34zc_h3453q5h4_h0000gn/T/broccoli-33823UHlAVh9nQAdb/cache-229-webpack_bundler_ember_auto_import_webpack/app.cjs ***!
+  !*** ../../../../private/var/folders/6m/r1lm1nsd34zc_h3453q5h4_h0000gn/T/broccoli-36671WDcm92b0zA6T/cache-229-webpack_bundler_ember_auto_import_webpack/app.cjs ***!
   \******************************************************************************************************************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("\nmodule.exports = (function(){\n  var d = _eai_d;\n  var r = _eai_r;\n  window.emberAutoImportDynamic = function(specifier) {\n    if (arguments.length === 1) {\n      return r('_eai_dyn_' + specifier);\n    } else {\n      return r('_eai_dynt_' + specifier)(Array.prototype.slice.call(arguments, 1))\n    }\n  };\n  window.emberAutoImportSync = function(specifier) {\n    return r('_eai_sync_' + specifier)(Array.prototype.slice.call(arguments, 1))\n  };\n  function esc(m) {\n    return m && m.__esModule ? m : Object.assign({ default: m }, m);\n  }\n    d('ember-page-title/helpers/page-title', ['@ember/service','@ember/component/helper','@ember/object/internals'], function() { return esc(__webpack_require__(/*! ember-page-title/helpers/page-title */ \"./node_modules/ember-page-title/dist/helpers/page-title.js\")); });\n    d('ember-page-title/services/page-title', ['@ember/runloop','@ember/service','@ember/utils','@ember/debug'], function() { return esc(__webpack_require__(/*! ember-page-title/services/page-title */ \"./node_modules/ember-page-title/dist/services/page-title.js\")); });\n    d('ember-welcome-page/components/welcome-page', ['@ember/component','@ember/application','@ember/version','@glimmer/component','@ember/template-factory'], function() { return esc(__webpack_require__(/*! ember-welcome-page/components/welcome-page */ \"./node_modules/ember-welcome-page/dist/components/welcome-page.js\")); });\n})();\n\n\n//# sourceURL=webpack://__ember_auto_import__/../../../../private/var/folders/6m/r1lm1nsd34zc_h3453q5h4_h0000gn/T/broccoli-33823UHlAVh9nQAdb/cache-229-webpack_bundler_ember_auto_import_webpack/app.cjs?");
+eval("\nmodule.exports = (function(){\n  var d = _eai_d;\n  var r = _eai_r;\n  window.emberAutoImportDynamic = function(specifier) {\n    if (arguments.length === 1) {\n      return r('_eai_dyn_' + specifier);\n    } else {\n      return r('_eai_dynt_' + specifier)(Array.prototype.slice.call(arguments, 1))\n    }\n  };\n  window.emberAutoImportSync = function(specifier) {\n    return r('_eai_sync_' + specifier)(Array.prototype.slice.call(arguments, 1))\n  };\n  function esc(m) {\n    return m && m.__esModule ? m : Object.assign({ default: m }, m);\n  }\n    d('ember-page-title/helpers/page-title', ['@ember/service','@ember/component/helper','@ember/object/internals'], function() { return esc(__webpack_require__(/*! ember-page-title/helpers/page-title */ \"./node_modules/ember-page-title/dist/helpers/page-title.js\")); });\n    d('ember-page-title/services/page-title', ['@ember/runloop','@ember/service','@ember/utils','@ember/debug'], function() { return esc(__webpack_require__(/*! ember-page-title/services/page-title */ \"./node_modules/ember-page-title/dist/services/page-title.js\")); });\n    d('ember-welcome-page/components/welcome-page', ['@ember/component','@ember/application','@ember/version','@glimmer/component','@ember/template-factory'], function() { return esc(__webpack_require__(/*! ember-welcome-page/components/welcome-page */ \"./node_modules/ember-welcome-page/dist/components/welcome-page.js\")); });\n})();\n\n\n//# sourceURL=webpack://__ember_auto_import__/../../../../private/var/folders/6m/r1lm1nsd34zc_h3453q5h4_h0000gn/T/broccoli-36671WDcm92b0zA6T/cache-229-webpack_bundler_ember_auto_import_webpack/app.cjs?");
 
 /***/ }),
 
-/***/ "../../../../private/var/folders/6m/r1lm1nsd34zc_h3453q5h4_h0000gn/T/broccoli-33823UHlAVh9nQAdb/cache-229-webpack_bundler_ember_auto_import_webpack/l.cjs":
+/***/ "../../../../private/var/folders/6m/r1lm1nsd34zc_h3453q5h4_h0000gn/T/broccoli-36671WDcm92b0zA6T/cache-229-webpack_bundler_ember_auto_import_webpack/l.cjs":
 /*!****************************************************************************************************************************************************************!*\
-  !*** ../../../../private/var/folders/6m/r1lm1nsd34zc_h3453q5h4_h0000gn/T/broccoli-33823UHlAVh9nQAdb/cache-229-webpack_bundler_ember_auto_import_webpack/l.cjs ***!
+  !*** ../../../../private/var/folders/6m/r1lm1nsd34zc_h3453q5h4_h0000gn/T/broccoli-36671WDcm92b0zA6T/cache-229-webpack_bundler_ember_auto_import_webpack/l.cjs ***!
   \****************************************************************************************************************************************************************/
 /***/ (function(module, exports) {
 
-eval("\nwindow._eai_r = require;\nwindow._eai_d = define;\n\n\n//# sourceURL=webpack://__ember_auto_import__/../../../../private/var/folders/6m/r1lm1nsd34zc_h3453q5h4_h0000gn/T/broccoli-33823UHlAVh9nQAdb/cache-229-webpack_bundler_ember_auto_import_webpack/l.cjs?");
-
-/***/ }),
-
-/***/ "../../../../private/var/folders/6m/r1lm1nsd34zc_h3453q5h4_h0000gn/T/broccoli-33823UHlAVh9nQAdb/cache-229-webpack_bundler_ember_auto_import_webpack/tests.cjs":
-/*!********************************************************************************************************************************************************************!*\
-  !*** ../../../../private/var/folders/6m/r1lm1nsd34zc_h3453q5h4_h0000gn/T/broccoli-33823UHlAVh9nQAdb/cache-229-webpack_bundler_ember_auto_import_webpack/tests.cjs ***!
-  \********************************************************************************************************************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("\nmodule.exports = (function(){\n  var d = _eai_d;\n  var r = _eai_r;\n  window.emberAutoImportDynamic = function(specifier) {\n    if (arguments.length === 1) {\n      return r('_eai_dyn_' + specifier);\n    } else {\n      return r('_eai_dynt_' + specifier)(Array.prototype.slice.call(arguments, 1))\n    }\n  };\n  window.emberAutoImportSync = function(specifier) {\n    return r('_eai_sync_' + specifier)(Array.prototype.slice.call(arguments, 1))\n  };\n  function esc(m) {\n    return m && m.__esModule ? m : Object.assign({ default: m }, m);\n  }\n    d('dom-element-descriptors', [], function() { return esc(__webpack_require__(/*! dom-element-descriptors */ \"./node_modules/dom-element-descriptors/dist/es/index.js\")); });\n    d('ember-qunit', ['@ember/test/adapter','ember-cli-test-loader/test-support/index','@ember/runloop','@ember/test-helpers','ember'], function() { return esc(__webpack_require__(/*! ember-qunit */ \"./node_modules/ember-qunit/dist/index.js\")); });\n    d('qunit', [], function() { return esc(__webpack_require__(/*! qunit */ \"./node_modules/qunit/qunit/qunit.js\")); });\n    __webpack_require__(/*! ./app.cjs */ \"../../../../private/var/folders/6m/r1lm1nsd34zc_h3453q5h4_h0000gn/T/broccoli-33823UHlAVh9nQAdb/cache-229-webpack_bundler_ember_auto_import_webpack/app.cjs\");\n})();\n\n\n//# sourceURL=webpack://__ember_auto_import__/../../../../private/var/folders/6m/r1lm1nsd34zc_h3453q5h4_h0000gn/T/broccoli-33823UHlAVh9nQAdb/cache-229-webpack_bundler_ember_auto_import_webpack/tests.cjs?");
+eval("\nwindow._eai_r = require;\nwindow._eai_d = define;\n\n\n//# sourceURL=webpack://__ember_auto_import__/../../../../private/var/folders/6m/r1lm1nsd34zc_h3453q5h4_h0000gn/T/broccoli-36671WDcm92b0zA6T/cache-229-webpack_bundler_ember_auto_import_webpack/l.cjs?");
 
 /***/ })
 
@@ -220,15 +166,12 @@ eval("\nmodule.exports = (function(){\n  var d = _eai_d;\n  var r = _eai_r;\n  w
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
 /******/ 			id: moduleId,
-/******/ 			loaded: false,
+/******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -310,15 +253,6 @@ eval("\nmodule.exports = (function(){\n  var d = _eai_d;\n  var r = _eai_r;\n  w
 /******/ 		};
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/node module decorator */
-/******/ 	(() => {
-/******/ 		__webpack_require__.nmd = (module) => {
-/******/ 			module.paths = [];
-/******/ 			if (!module.children) module.children = [];
-/******/ 			return module;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
 /******/ 		// no baseURI
@@ -327,7 +261,7 @@ eval("\nmodule.exports = (function(){\n  var d = _eai_d;\n  var r = _eai_r;\n  w
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"tests": 0
+/******/ 			"app": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -382,8 +316,8 @@ eval("\nmodule.exports = (function(){\n  var d = _eai_d;\n  var r = _eai_r;\n  w
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["vendors-node_modules_ember-page-title_dist_helpers_page-title_js-node_modules_ember-page-titl-9a1fdf","vendors-node_modules_ember-qunit_dist_index_js-node_modules_dom-element-descriptors_dist_es_i-a01131"], () => (__webpack_require__("../../../../private/var/folders/6m/r1lm1nsd34zc_h3453q5h4_h0000gn/T/broccoli-33823UHlAVh9nQAdb/cache-229-webpack_bundler_ember_auto_import_webpack/l.cjs")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_ember-page-title_dist_helpers_page-title_js-node_modules_ember-page-titl-9a1fdf","vendors-node_modules_ember-qunit_dist_index_js-node_modules_dom-element-descriptors_dist_es_i-a01131"], () => (__webpack_require__("../../../../private/var/folders/6m/r1lm1nsd34zc_h3453q5h4_h0000gn/T/broccoli-33823UHlAVh9nQAdb/cache-229-webpack_bundler_ember_auto_import_webpack/tests.cjs")))
+/******/ 	__webpack_require__.O(undefined, ["vendors-node_modules_ember-page-title_dist_helpers_page-title_js-node_modules_ember-page-titl-9a1fdf"], () => (__webpack_require__("../../../../private/var/folders/6m/r1lm1nsd34zc_h3453q5h4_h0000gn/T/broccoli-36671WDcm92b0zA6T/cache-229-webpack_bundler_ember_auto_import_webpack/l.cjs")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_ember-page-title_dist_helpers_page-title_js-node_modules_ember-page-titl-9a1fdf"], () => (__webpack_require__("../../../../private/var/folders/6m/r1lm1nsd34zc_h3453q5h4_h0000gn/T/broccoli-36671WDcm92b0zA6T/cache-229-webpack_bundler_ember_auto_import_webpack/app.cjs")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	__ember_auto_import__ = __webpack_exports__;
 /******/ 	
