@@ -252,14 +252,14 @@ define("ember-quickstart/tests/integration/components/map-test", ["qunit", "embe
             @zoom="10"
             @width="150"
             @height="120"
-            src="/assets/images/teaching-tomster.png"
+            src="/assets/images/business.png"
             width="200"
             height="300"
           />
       */
       {
-        "id": "Vw0b1sTD",
-        "block": "[[[8,[39,0],[[24,\"src\",\"/assets/images/teaching-tomster.png\"],[24,\"width\",\"200\"],[24,\"height\",\"300\"]],[[\"@lat\",\"@lng\",\"@zoom\",\"@width\",\"@height\"],[\"37.7797\",\"-122.4184\",\"10\",\"150\",\"120\"]],null]],[],false,[\"map\"]]",
+        "id": "N9aA+2gt",
+        "block": "[[[8,[39,0],[[24,\"src\",\"/assets/images/business.png\"],[24,\"width\",\"200\"],[24,\"height\",\"300\"]],[[\"@lat\",\"@lng\",\"@zoom\",\"@width\",\"@height\"],[\"37.7797\",\"-122.4184\",\"10\",\"150\",\"120\"]],null]],[],false,[\"map\"]]",
         "moduleName": "/Users/lizethvera/Code/ember-app/ember-quickstart/tests/integration/components/map-test.js",
         "isStrictMode": false
       }));
@@ -392,30 +392,30 @@ define("ember-quickstart/tests/integration/components/rental/image-test", ["quni
       /*
         
             <Rental::Image
-              src="/assets/images/teaching-tomster.png"
+              src="/assets/images/business.png"
               alt="Teaching Tomster"
             />
       */
       {
-        "id": "GmKdAVt2",
-        "block": "[[[1,\"\\n      \"],[8,[39,0],[[24,\"src\",\"/assets/images/teaching-tomster.png\"],[24,\"alt\",\"Teaching Tomster\"]],null,null]],[],false,[\"rental/image\"]]",
+        "id": "ess4ef7I",
+        "block": "[[[1,\"\\n      \"],[8,[39,0],[[24,\"src\",\"/assets/images/business.png\"],[24,\"alt\",\"Teaching Tomster\"]],null,null]],[],false,[\"rental/image\"]]",
         "moduleName": "/Users/lizethvera/Code/ember-app/ember-quickstart/tests/integration/components/rental/image-test.js",
         "isStrictMode": false
       }));
-      assert.dom('.image img').exists().hasAttribute('src', '/assets/images/teaching-tomster.png').hasAttribute('alt', 'Teaching Tomster');
+      assert.dom('.image img').exists().hasAttribute('src', '/assets/images/business.png').hasAttribute('alt', 'Teaching Tomster');
     });
     (0, _qunit.test)('clicking on the component toggles its size', async function (assert) {
       await (0, _testHelpers.render)((0, _templateFactory.createTemplateFactory)(
       /*
         
             <Rental::Image
-              src="/assets/images/teaching-tomster.png"
+              src="/assets/images/business.png"
               alt="Teaching Tomster"
             />
       */
       {
-        "id": "GmKdAVt2",
-        "block": "[[[1,\"\\n      \"],[8,[39,0],[[24,\"src\",\"/assets/images/teaching-tomster.png\"],[24,\"alt\",\"Teaching Tomster\"]],null,null]],[],false,[\"rental/image\"]]",
+        "id": "ess4ef7I",
+        "block": "[[[1,\"\\n      \"],[8,[39,0],[[24,\"src\",\"/assets/images/business.png\"],[24,\"alt\",\"Teaching Tomster\"]],null,null]],[],false,[\"rental/image\"]]",
         "moduleName": "/Users/lizethvera/Code/ember-app/ember-quickstart/tests/integration/components/rental/image-test.js",
         "isStrictMode": false
       }));

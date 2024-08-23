@@ -12,7 +12,7 @@ module('Integration | Component | rental/image', function (hooks) {
 
     await render(hbs `
       <Rental::Image
-        src="/assets/images/teaching-tomster.png"
+        src="/assets/images/business.png"
         alt="Teaching Tomster"
       />`
     );
@@ -20,14 +20,14 @@ module('Integration | Component | rental/image', function (hooks) {
     assert
     .dom('.image img')
     .exists()
-    .hasAttribute('src', '/assets/images/teaching-tomster.png')
+    .hasAttribute('src', '/assets/images/business.png')
     .hasAttribute('alt', 'Teaching Tomster');
   });
 
   test('clicking on the component toggles its size', async function(assert){
     await render(hbs `
       <Rental::Image
-        src="/assets/images/teaching-tomster.png"
+        src="/assets/images/business.png"
         alt="Teaching Tomster"
       />`
     );
